@@ -4,7 +4,7 @@ Deploying the **PySimple** image from the OpenShift Web Console.
 This exercise uses the OpenRiskNet OpenShift Web Console to deploy a
 container image from a public registry (docker.io). 
 
-## Logging into the server
+## Log into the server
 Using a web browser (ideally Google Chrome) navigate to the OpenRiskNet
 OpenShift Development Web Console at [https://dev.openrisknet.org:8443/](https://dev.openrisknet.org:8443/)
 where you'll be presented with the login page.
