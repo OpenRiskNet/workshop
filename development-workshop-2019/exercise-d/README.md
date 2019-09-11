@@ -73,7 +73,7 @@ Lets's delete, wait and then re-create the application...
     oc wait dc/pysimple --for=delete
     oc process -f deployment-config.yaml | oc create -f -
 
-If we visit the application's **Route** now we'll see that the `Num visits`
+If we `curl` the application's **Route** now we'll see that the `Num visits`
 is now `2`. The application was re-deployed but data was persisted.
 
 ## Delete the project
