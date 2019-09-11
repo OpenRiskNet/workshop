@@ -7,7 +7,7 @@ restarts.
 
 >   Here we assume that you've successfully worked through exercises **A**
     and **B** and have the OpenShift command-ine tools available and are
-    logged into the workshop's OpenSHift cluster.
+    logged into the workshop's OpenShift cluster.
 
 ## Login and create a project
 Login to the server by copying the example login command you were given on the
