@@ -108,6 +108,38 @@ Click on the route's link to visit the application, or you can use
 
     curl http://pysimple-pysimple.dev.openrisknet.org/
 
+## Scaling the application
+With the application running we can scale it up and down by
+setting the number of _replicas_ for the application's container.
+
+>   The initial replica count is declared in the **DeploymentConfig** template
+    file but we can easily adjust it from the command-line.
+
+To scale our application's container replica count to zero,
+stopping the container, we can run: -
+
+    oc scale deploymentconfig/pysimple --replicas=0
+
+Many object names can be abbreviated, the above command can also be shortened
+to: -
+
+    oc scale dc/pysimple --replicas=0
+
+The replica state can be confirmed by visiting the application's **Overview**
+page on the Web Console or by _describing_ the deployment object using the
+command-line tools: -
+
+    oc describe dc/pysimple | grep Replicas
+
+Which should return something like the following: -
+
+    Replicas:	0
+	Replicas:	0 current / 0 desired
+
+To restore the original replica value of 1 it's simply: -
+
+    oc scale dc/pysimple --replicas=1
+
 ## Delete the project
 Clean up by deleting the project.
 
