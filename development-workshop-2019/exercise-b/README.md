@@ -5,6 +5,9 @@ Deploying the **PySimple** image from the OpenShift Command-Line.
     using the OpenShift Web Console. In this exercise we use OpenShift's
     command-line tools.
 
+>   For a full list of command you can visit the OpenShift v3.11
+    [CLI reference] page.
+
 ## Installing the command-line tools
 Follow the instructions in the **Log into the server** section of
 [Exercise A](../exercise-a/README.md).
@@ -151,3 +154,7 @@ Project deletion can take a few moments, you can always wait for deletion
 with the command: -
 
     oc wait project/pysimple --for=delete
+
+---
+
+[cli reference]: https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html

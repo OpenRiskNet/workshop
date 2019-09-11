@@ -37,7 +37,7 @@ You deploy applications from within a project.
     **Get started with your project**.
 1.  Click the **Deploy Image** button and select the **Image Name** option.
 1.  Enter the registry name of the image. As we're using a pre-existing image
-    simply enter the image name, e.g. `alanbchristie/pysimple:latest`
+    simply enter the image name, e.g. `alanbchristie/pysimple:2019.3`
     and then hit **Return**. Without a registry OpenShift assumes `docker.io`
     but you can add a registry if you want.
 1.  OpenShift queries the image and, after a few moments, displays

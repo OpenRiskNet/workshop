@@ -71,3 +71,17 @@ objects:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
+          # Declare volume 'mounts'.
+          # i.e. where volumes appear in the application container
+          #      by setting a 'mountPath' and naming the 'volume' to mount.
+          volumeMounts:
+          - mountPath: /data
+            name: pysimple
+        # Declare volumes that can be mounted.
+        # Here we give each a 'name' (used in a corresponding 'volumeMount')
+        # and identify the name of the volume claim that provides the physical
+        # storage.
+        volumes:
+        - name: pysimple
+          persistentVolumeClaim:
+            claimName: pysimple
