@@ -1,0 +1,45 @@
+---
+
+kind: Template
+apiVersion: v1
+metadata:
+  name: pysimple
+  annotations:
+    description: The PySimple Exercise Application (Service)
+labels:
+  template: pysimple
+
+# ----------
+# Parameters
+# ----------
+
+parameters:
+
+- name: NAME
+  value: pysimple
+
+- name: NAMESPACE
+  value: pysimple
+
+- name: SERVICE_PORT
+  value: '8080'
+  description: The external port for the Pod's internal port
+
+# -------
+# Objects
+# -------
+
+objects:
+
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: ${NAME}
+    namespace: ${NAMESPACE}
+  spec:
+    selector:
+      name: ${NAME}
+    ports:
+    - name: http
+      port: ${SERVICE_PORT}
+      targetPort: 8080
