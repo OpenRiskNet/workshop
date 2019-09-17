@@ -33,7 +33,11 @@ Login to the server by copying the example login command you were given on the
 ## Creating a namespace (project)
 Use the command-line to create a project.
 
-    oc new-project pysimple --display-name='PySimple' --description='PySimple (Exercise B)'
+    oc new-project user99-exerciseb --display-name='User99 PySimple' --description='User99 PySimple (Exercise B)'
+
+Replace `user99` with your actual username (similarly for other commands in this exercise which refer to `user99`.
+Project names in OpenShift have global scope so we must have unique names, hence why we include the username as part
+of the project name.
 
 >   Using `--display-name` and `--description` is preferred but optional.
 
@@ -44,13 +48,16 @@ You are automatically entered into new projects as you create them but,
 just in case you've been elsewhere, you can always make sure you're in the
 right project with the command: -
 
-    oc project pysimple
+    oc project user99-exerciseb
 
 You can see which project you're in with the command: -
 
     oc project
 
-We can now deploy the application.
+We can now deploy the application. We could do it in a similar way to the way we did
+with the web console and just say create a new app with the PySimple container, but 
+instead we'll do this is a more controlled manner using templates that define the 
+OpenShift objects that we are wanting to be created. 
 
 But first we need to briefly discuss OpenShift _templates_.
 
@@ -102,14 +109,16 @@ convenient `route.yaml` template file: -
     oc process -f route.yaml | oc create -f -
 
 If you return to the Web Console your application **Overview** should now
-indicate that the **Route** has been applied.
+indicate that the **Route** has been applied. The route is given an automatically
+generated URL such as `pysimple-user99-exerciseb`. It's possible to instead specify
+a specific URL if you want but we don't need to do so for this execise.
 
 _SCREENSHOT_
 
 Click on the route's link to visit the application, or you can use
 `curl` from the command-line: -
 
-    curl http://pysimple-pysimple.dev.openrisknet.org/
+    curl http://pysimple-user99-exerciseb.dev.openrisknet.org/
 
 ## Scaling the application
 With the application running we can scale it up and down by
@@ -143,17 +152,36 @@ To restore the original replica value of 1 it's simply: -
 
     oc scale dc/pysimple --replicas=1
 
+## Investigating resiliance
+
+Let's see what happens if your pod dies. First list your pods:
+
+    oc get pod
+
+You should see your pod listed. Copy its name (something like `pysimple-1-4df47a5`).
+
+Now lets delete the pod, simulating the situation where it might have crashed, or the server on which it was running creashed.
+
+    oc delete pod/pysimple-1-4df47a5
+
+Replace the last part with the actual name of your pod. Yes, **really** delete it. No harm will be done!
+
+Now either go to the web console for your project to look at what is happening or continue to execute `oc get pod` to see this.
+
+You will notice that quite quickly OpenShift will notice that the required number of pods are not running and will rectify this
+by starting a new pod.
+
 ## Delete the project
 Clean up by deleting the project.
 
 To delete the PySimple project simply run: -
 
-    oc delete project/pysimple
+    oc delete project/user99-exerciseb
     
 Project deletion can take a few moments, you can always wait for deletion
 with the command: -
 
-    oc wait project/pysimple --for=delete
+    oc wait project/user99-exerciseb --for=delete
 
 ---
 

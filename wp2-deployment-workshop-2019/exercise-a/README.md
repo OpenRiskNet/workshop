@@ -4,6 +4,9 @@ Deploying the **PySimple** image from the OpenShift Web Console.
 This exercise uses the OpenRiskNet OpenShift Web Console to deploy a
 container image from a public registry (docker.io). 
 
+The container we use is **PySimple**, a simple Python web server that well use
+in several places in this workshop.
+
 ## Log into the server
 Using a web browser (ideally Google Chrome) navigate to the OpenRiskNet
 OpenShift Development Web Console at [https://dev.openrisknet.org:8443/](https://dev.openrisknet.org:8443/)
@@ -21,7 +24,7 @@ Application are deployed to _namespaces_.
 1.  Provide a **Name** for the porject. Project names may only contain
     lower-case letters, numbers, and dashes and must begin with a letter or
     number. The name is arbitrary but, as we're deploying PySimple,
-    let's call it `pysimple`.
+    let's call it `user99-exercisea` (replace `user99` with you username).
     1.  You can provide an optional **Display Name**, which does not have the
         same content restrictions as the **Name**, and a **Description** 
 1.  Click **Create** and your project should appear in the **My Projects**
@@ -32,7 +35,7 @@ _SCREENSHOT_
 ## Deploying the application image
 You deploy applications from within a project.
 
-1.  From the list of your projects click the **PySimple** project you just
+1.  From the list of your projects click the **user99-exercisea** project you just
     created. Here you should be greeted by a page explaining how you can
     **Get started with your project**.
 1.  Click the **Deploy Image** button and select the **Image Name** option.
@@ -83,6 +86,7 @@ Click the URL and you should be taken to the **PySimple** HTTP
 page which should say **Hello world!** along with
 **No Redis container, counter disabled**
 
+
 _SCREENSHOT_
 
 ## Delete the project
@@ -93,8 +97,8 @@ Clean up by deleting the project.
     by clicking the **okd** icon in the top left of the console window.
 1.  You should be returned to the start and you should see the **My Projects**
     panel on the right.
-1.  Click the vertical ellipses (`...`) ans select **Delete Project**.
-    1.  Enter you project **Name** (e.g. `pysimple`) in the dialogue box
+1.  Click the vertical ellipses (`...`) and select **Delete Project**.
+    1.  Enter you project **Name** (e.g. `user99-exercisea`) in the dialogue box
         and then click the red **Delete** button to begin the deletion process.
     1.  The project is _marked for deletion_ but this simple project should
         be removed after a few moments.
