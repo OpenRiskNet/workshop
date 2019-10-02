@@ -19,6 +19,7 @@ Login to the server by copying the example login command you were given on the
 **Command Line Tools** page, which will be something like this: -
 
     oc login https://dev.openrisknet.org:8443
+    ...
     oc new-project user99-exercised
 
 ## Claiming storage
@@ -34,14 +35,36 @@ volume. Like all other objects you use the command line `process` and
 >   The claim belongs to a namespace (project), only containers in the named
     namespace can use the claim.
 
-## Using storage
+You can see the **Claim** from the **Storage** section of your project's
+console: -
+
+![](screen-1.png)
+
+...or from the command-line: -
+
+    oc get pvc
+    ...
+    
+## Using storage in a container (Pod)
 We declare `volumes` in our application **DeploymentConfig** when we want to
 attach external, persistent volumes.
 
 The **DeploymentConfig** in this exercise extends the one in `exercise-b`
-by adding a `volume` declaration and a `volumeMount`. The `volume` attaches the
-claim to the container and the `volumeMount` defines its mount-point inside the
-container.
+by adding a `volume` declaration and a `volumeMount`.
+
+The `volume` attaches the claim (by name) to the container: -
+
+    volumes:
+    - name: pysimple
+      persistentVolumeClaim:
+        claimName: pysimple
+
+The `volumeMount` defines its mount-point (i.e. `/data` in our case)
+inside the container: -
+
+    volumeMounts:
+    - mountPath: /data
+      name: pysimple
 
 ## Deploying the application image
 Just as we did with **Exercise B** let's deploy the application, which consists
@@ -75,9 +98,12 @@ Lets's delete, wait and then re-create the application...
     oc process -f deployment-config.yaml | oc create -f -
 
 With the application restored, if we `curl` the application's **Route** now,
-we'll see that the `Num visits` is now `2`.
+we'll see that the `Num visits` is now `2`: -
 
-The application was re-deployed but data was persisted.
+    curl http://pysimple-user99-exercised.dev.openrisknet.org/
+
+The application was removed and re-deployed and its disk-based data was
+persisted.
 
 ## Delete the project
 Clean up by deleting the project.
