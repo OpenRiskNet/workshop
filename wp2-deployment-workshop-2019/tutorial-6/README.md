@@ -7,7 +7,7 @@ better suited for more complex applications.
 
 ---
 
-## HELM charts
+# HELM charts
 
 Typically Kubernetes deployments have been defined using HELM charts.
 These are not widely used in OpenShift largely because of security concerns.
@@ -21,14 +21,23 @@ tools typically used for automated application deployment, configuration
 and orchestration.
 
 Using YAML-based files, referred to as *playbooks*, users can configure almost
-every aspect of a physical machine using *modules* provided by the tool.
+every aspect of a physical machine by defining *tasks* that use the *modules*
+provided by the tool.
+
+For example, the following very simple excerpt defines a task that results
+in the command-line execution of `oc get pvc` with the result (stdout) written
+to the variable `pvc_result`: -
+
+    - name: Get known PVCs (current project)
+        command: oc get pvc
+        register: pvc_result
 
 ## Advantages
 
 -   Complete (parallel) control of multiple physical machines 
 -   More than 2,800 built-in modules from package management using `apk`
     to `zfs` for managing zfs file systems
--   Simple Kubernetes object management via the built-in `k8s` module
+-   Simple and richer Kubernetes object management via the built-in `k8s` module
 
 ## Examples
 
@@ -45,23 +54,50 @@ way of configuring a physical machine by imposing a directory structure and
 naming convention that allows its playbooks to be reused, easily (dynamically)
 configured and shared with the community.
 
-If properly configured, roles can also be shared via a public service Ansible
-refers to as the [Galaxy].
+If properly structured, roles can also be easily shared via a public service
+Ansible refers to as the [Galaxy].
 
 ## Advantages
 
 All the advantages of playbooks plus: -
 
 -   Structured
+-   Meta-data concept
 -   Dependency declarations
 -   Easily shared
+-   Unit and functional test framework
  
 ## Examples
 
 ### PySimple
 
-Describe the PySimple role
+The **PySimple** application we've been deploying during the workshop is
+available as an Ansible role, published to [Galaxy]. The role source is
+available on [GitHub](https://github.com/alanbchristie/ansible-role-PySimple).
 
+Variables are typically defined in the `defaults/main.yml` file where you'll
+find the variables that control the PySimple deployment.
+
+To use a Galaxy role define it with the aid of a `requirements.yml`
+file: -
+
+    - src: alanbchristie.pysimple
+      version: 1.0.0
+
+And install it using the `ansible-galaxy` tool: -
+
+    ansible-galaxy install -r requirements.yml
+    
+And execute it, defining any role variables from with a *playbook*
+(or *role*) with a simple YAML construct: -
+
+    - hosts: servers
+      tasks:
+      - include_role:
+          name: alanbchristie.pysimple
+        vars:
+          image_tag: '2019.4'
+    
 # Operators
 
 Operators are a relatively new concept in Kubernetes but are gaining big traction.
@@ -81,8 +117,11 @@ Operators can be defined in a number of ways, using: -
 
 ### PySimple
 
-Describe the PySimple operator
-
+The **PySimple** application we've been deploying during the workshop is
+available as a simple Kubernetes *ansible operator*. The operator is
+available on [GitHub](https://github.com/alanbchristie/ansible-operator-PySimple)
+and deploys the PySimple *role* into Kubernetes or OpenShift.
+ 
 ---
 
 [toc](../README.md) | [prev](../tutorial-5/README.md) | next
