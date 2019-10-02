@@ -1,5 +1,7 @@
 ---
 
+# A template for workshop Exercise D
+
 kind: Template
 apiVersion: v1
 metadata:
@@ -18,9 +20,6 @@ parameters:
 - name: NAME
   value: pysimple
 
-- name: NAMESPACE
-  value: pysimple
-
 - name: IMAGE
   value: alanbchristie/pysimple:2019.3
 
@@ -34,7 +33,6 @@ objects:
   apiVersion: v1
   metadata:
     name: ${NAME}
-    namespace: ${NAMESPACE}
   spec:
     replicas: 1
     selector:

@@ -1,5 +1,7 @@
 ---
 
+# A template for workshop Exercise D
+
 kind: Template
 apiVersion: v1
 metadata:
@@ -15,9 +17,6 @@ labels:
 
 parameters:
 
-- name: NAMESPACE
-  value: pysimple
-
 - name: SERVICE_PORT
   value: '8080'
   description: The external port for the Pod's internal port
@@ -32,7 +31,6 @@ objects:
   apiVersion: v1
   metadata:
     name: pysimple
-    namespace: ${NAMESPACE}
   spec:
     selector:
       name: pysimple
