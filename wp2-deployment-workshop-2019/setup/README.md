@@ -86,6 +86,5 @@ See [these instructions](https://docs.okd.io/latest/minishift/getting-started/in
 for insalling and running Minshift.
 
 ---
+
 [toc](../README.md) | [next](../tutorial-1/README.md)
-
-
