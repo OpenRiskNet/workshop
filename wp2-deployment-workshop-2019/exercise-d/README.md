@@ -19,7 +19,7 @@ Login to the server by copying the example login command you were given on the
 **Command Line Tools** page, which will be something like this: -
 
     oc login https://dev.openrisknet.org:8443 --token=1234
-    oc new-project user99-exercised'
+    oc new-project user99-exercised
 
 ## Claiming storage
 In order to use an external (persistent) volume we need to make a _claim_.

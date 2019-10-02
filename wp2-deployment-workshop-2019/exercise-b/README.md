@@ -37,12 +37,13 @@ Login to the server by copying the example login command you were given on the
     oc login https://dev.openrisknet.org:8443 --token=1234
 
 ## Creating a namespace (project)
-Use the command-line to create a project.
+Use the command-line to create a project: -
 
     oc new-project user99-exerciseb'
 
-Replace `user99` with your actual username (similarly for other commands in this exercise which refer to `user99`.
-Project names in OpenShift have global scope so we must have unique names, hence why we include the username as part
+Replace `user99` with your actual username (similarly for other commands in
+this exercise which refer to `user99`). Project names in OpenShift have global
+scope so we must have unique names, hence why we include the username as part
 of the project name.
 
 >   Using `--display-name` and `--description` is preferred but optional.
@@ -60,10 +61,10 @@ You can see which project you're in with the command: -
 
     oc project
 
-We can now deploy the application. We could do it in a similar way to the way we did
-with the web console and just say create a new app with the PySimple container, but 
-instead we'll do this is a more controlled manner using templates that define the 
-OpenShift objects that we are wanting to be created. 
+We can now deploy the application. We could do it in a similar way to the way
+we did with the web console and just say create a new app with the PySimple
+container, but instead we'll do this is a more controlled manner using
+templates that define the OpenShift objects that we are wanting to be created. 
 
 But first we need to briefly discuss OpenShift _templates_.
 
@@ -94,7 +95,7 @@ But first we need to briefly discuss OpenShift _templates_.
     compiling the YAML file into a form usable by OpenShift. Once processed we
     then _create_ objects from the processed result.
 
-From the `exercie-b` directory we can install the application's container
+From the `exercise-b` directory we can install the application's container
 (a **Deployment**) and its *Service** with the following two commands: -
 
     oc process -f deployment-config.yaml | oc create -f -
@@ -115,9 +116,7 @@ convenient `route.yaml` template file: -
     oc process -f route.yaml | oc create -f -
 
 If you return to the Web Console your application **Overview** should now
-indicate that the **Route** has been applied. The route is given an automatically
-generated URL such as `pysimple-user99-exerciseb`. It's possible to instead specify
-a specific URL if you want but we don't need to do so for this execise.
+indicate that the **Route** has been applied.
 
 _SCREENSHOT_
 
@@ -159,23 +158,25 @@ To restore the original replica value of 1 it's simply: -
     oc scale dc/pysimple --replicas=1
 
 ## Investigating resiliance
-
 Let's see what happens if your pod dies. First list your pods:
 
     oc get pod
 
 You should see your pod listed. Copy its name (something like `pysimple-1-4df47a5`).
 
-Now lets delete the pod, simulating the situation where it might have crashed, or the server on which it was running creashed.
+Now let's delete the pod, simulating the situation where it might have crashed,
+or the server on which it was running crashed.
 
     oc delete pod/pysimple-1-4df47a5
 
-Replace the last part with the actual name of your pod. Yes, **really** delete it. No harm will be done!
+Replace the last part with the actual name of your pod. And, yes,
+**really** delete it. No harm will be done!
 
-Now either go to the web console for your project to look at what is happening or continue to execute `oc get pod` to see this.
+Now either go to the web console for your project to look at what is happening
+or continue to execute `oc get pod` to see this.
 
-You will notice that quite quickly OpenShift will notice that the required number of pods are not running and will rectify this
-by starting a new pod.
+You will notice that quite quickly OpenShift will notice that the required
+number of pods are not running and will rectify this by starting a new pod.
 
 ## Delete the project
 Clean up by deleting the project.

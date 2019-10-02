@@ -14,7 +14,8 @@ in several places in this workshop.
 
 ## Log into the server
 Using a web browser (ideally Google Chrome) navigate to the OpenRiskNet
-OpenShift Development Web Console at [https://dev.openrisknet.org:8443/](https://dev.openrisknet.org:8443/)
+OpenShift Development Web Console at
+[https://dev.openrisknet.org:8443/](https://dev.openrisknet.org:8443/)
 where you'll be presented with the login page.
 
 _SCREENSHOT_
@@ -22,16 +23,15 @@ _SCREENSHOT_
 Here, enter the **username** and **password** you've been assigned.
 
 ## Creating a namespace (project)
-Applications are deployed to _namespaces_. Note: we use the terms **project** and **namespace**
-interchangeably.
-
+Applications are deployed to _namespaces_. Note: we use the terms
+**project** and **namespace** interchangeably.
 
 1.  To create a namespace (project) for the application click the
     blue **+ Create Project** button in the top-right of the console.
 1.  Provide a **Name** for the project. Project names may only contain
     lower-case letters, numbers, and dashes and must begin with a letter or
     number. The name is arbitrary but, according to our workshop convention,
-    let's call it `user99-exercisea` (replace `user99` with you username).
+    let's call it `user99-exercisea` (replace `user99` with your username).
     1.  You can provide an optional **Display Name**, which does not have the
         same content restrictions as the **Name**, and a **Description** 
 1.  Click **Create** and your project should appear in the **My Projects**
@@ -42,7 +42,7 @@ _SCREENSHOT_
 ## Deploying the application image
 You deploy applications from within a project.
 
-1.  From the list of your projects click the **user99-exercisea** project you just
+1.  From the list of your projects click the **PySimple** project you just
     created. Here you should be greeted by a page explaining how you can
     **Get started with your project**.
 1.  Click the **Deploy Image** button and select the **Image Name** option.
@@ -81,8 +81,8 @@ you need to add a **Route**.
 1.  From the project **Overview** page click the **Create Route** text in the
     **NETWORKING** section.
 1.  For this example you can leave all the options at their default values.
-    This will create an unsecured **Route** (e.g. HTTP not HTTPS) from outside 
-    the cluster to the application's **Service**.
+    This will create an unsecured **Route** from outside the cluster to the
+    application's **Service**.
 1.  Click the blue **Create** button at the bottom of the screen.
 
 You should see a **Route Created** notification as you're returned to a
@@ -92,7 +92,6 @@ that connects you to the application.
 Click the URL and you should be taken to the **PySimple** HTTP
 page which should say **Hello world!** along with
 **No Redis container, counter disabled**
-
 
 _SCREENSHOT_
 
@@ -104,8 +103,8 @@ Clean up by deleting the project.
     by clicking the **okd** icon in the top left of the console window.
 1.  You should be returned to the start and you should see the **My Projects**
     panel on the right.
-1.  Click the vertical ellipses (`...`) and select **Delete Project**.
-    1.  Enter you project **Name** (e.g. `user99-exercisea`) in the dialogue box
+1.  Click the vertical ellipses (`...`) ans select **Delete Project**.
+    1.  Enter you project **Name** (e.g. `pysimple`) in the dialogue box
         and then click the red **Delete** button to begin the deletion process.
     1.  The project is _marked for deletion_ but this simple project should
         be removed after a few moments.
