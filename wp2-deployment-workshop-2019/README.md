@@ -26,8 +26,8 @@ is assumed.
 -   [Tutorial 5](tutorial-5/README.md) - Probes and resource limits
 -   [Tutorial 6](tutorial-6/README.md) - Advanced deployment techniques
 
-This workshop is loosely based around the content of
-[this webinar](https://openrisknet.org/events/66/) that took place in June 2019.
+This workshop is loosely based around the content of the [webinar](https://openrisknet.org/events/66/)
+that took place in June 2019.
 
 ---
 

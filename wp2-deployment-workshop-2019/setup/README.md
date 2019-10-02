@@ -14,48 +14,57 @@ Here we describe getting setup for the workshop.
 
 ## User account
 
-Each attendee will have their own user account for performing the exercises. A number of users 
-(user1, user2, ...) have been setup with passwords. Open 
+Each attendee will have their own user account for performing the exercises.
+A number of users  (user1, user2, ...) have been setup with passwords. Open 
 [this Google sheet](https://docs.google.com/spreadsheets/d/1HUgsfSz3dyRDPXQq55t_bGhoDw9CS7U6d1oHadJg94s)
 to see these users and write your name in the `owner` column to claim that username.
-Once you have entered  your name reload the page in your browser to ensure that you have successfully claimed that username.
+Once you have entered  your name reload the page in your browser to ensure that
+you have successfully claimed that username.
 
-That username and password will be used for your login to OpenShift and your login to the shared server.
+That username and password will be used for your login to OpenShift
+and your login to the shared server.
 
 ## Naming etiquette
 
-When it comes to creating OpenShift project please conform to a convention that allows to identify your project. The convention is that the project should be named `username-exercise`. For insatance if you are `user7` and 
-are working on `exercise C` then name your project `user7-exercisec`. This avoids name clashes and makes it 
-easier for the workshop organisers to step in and assist. 
+When it comes to creating OpenShift projects please conform to a convention
+that allows everyone to identify your project. The convention is that the
+project should be named `<username>-<exercise>`. For instance if you are `user7`
+and  are working on `exercise C` then name your project `user7-exercisec`.
+
+This avoids name clashes and makes it easier for the workshop organisers to
+step in and assist. 
 
 ## Accessing the oc command line tool
 
-`oc` is a program that lets you execute commands against the OpenShift API. If you are familiar with Kubernetes
-then `oc` is an extension of the `kubectl` program, adding some OpenShift specific commands.
+`oc` is a program that lets you execute commands against the OpenShift API.
+If you are familiar with Kubernetes then `oc` is an extension of the `kubectl`
+program, adding some OpenShift specific commands.
 
-### oc through a login on the shared acccess machine.
+### oc through a login on the shared access machine.
 
-To avoid the need to install `oc` on your computer we have set up a simple Linux virtual machine that has `oc` already installed. Each user in the Google sheet mentioned above has a login with the corresponding password.
+To avoid the need to install `oc` on your computer we have set up a simple
+Linux virtual machine that has `oc` already installed. Each user in the Google
+sheet mentioned above has a login with the corresponding password.
 
-To login you will need a `ssh` client on your computer. Linux, Mac and recent Windows 10 machines will have
-that pre-installed. For older Windows machines you might want to download and install 
+To login you will need a `ssh` client on your computer. Linux, Mac and recent
+Windows 10 machines will have that pre-installed. For older Windows machines
+you might want to download and install 
 [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 To login do something like this:
 
-```
-ssh <user>@<server>
-password: ********
-$ 
 
-```
-
+    ssh <user>@<server>
+    password: ********
+    
 ### Installing oc on your computer
 
 Alternatively you can download and install `oc` on your laptop.
-Download the appropriate version. See the `Download oc Client Tools` section [here](https://www.okd.io/download.html).
+Download the appropriate version. See the `Download oc Client Tools` section
+[here](https://www.okd.io/download.html).
 
-You should just need to download the file, unzip it and make sure that the `oc` binary is on your PATH.
+You should just need to download the file, unzip it and make sure
+that the `oc` binary is on your PATH.
 
 ## Logging in to Openshift
 
@@ -68,11 +77,22 @@ Once logged in you will see a page like this:
 
 ### Using the oc CLI
 
-```
-oc login -u <username> https://server 
-...
-oc whoami
-```
+The `oc` command is used to execute all of the OpenShift commands we'll be using.
+But first, you need to use `oc` to connect to the chosen server: -
+
+    oc login -u <username> https://server 
+
+You can always run `oc` to get some basic help: -
+    
+    oc
+    ...
+
+And any other commands that are available: -
+
+    oc project
+    ...
+    oc whoami
+    ...
 
 ## Minishift
 
@@ -83,7 +103,7 @@ OpenShift environment that can be run on your laptop. Once started Minishift pro
 functional local OpenShift environment that can be used for development.
 
 See [these instructions](https://docs.okd.io/latest/minishift/getting-started/installing.html)
-for insalling and running Minshift.
+for installing and running Minishift.
 
 ---
 
