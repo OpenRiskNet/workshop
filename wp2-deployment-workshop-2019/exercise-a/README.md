@@ -98,7 +98,7 @@ to be taken to your project's **Overview** panel.
 ## Project overview
 The overview is a general view of your project's objects.
 
-As the PySimple image is quite small (around **36MB**) it might be already running
+As the PySimple image is quite small (around **38MB**) it might be already running
 by the time you visit the overview page. If not you should see the application
 deployment progress where the image is first pulled from the public registry,
 passing through an initialisation phase before settling down into a running
