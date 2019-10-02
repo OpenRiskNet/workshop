@@ -53,7 +53,6 @@ you might want to download and install
 
 To login do something like this:
 
-
     ssh <user>@<server>
     password: ********
     
@@ -65,6 +64,12 @@ Download the appropriate version. See the `Download oc Client Tools` section
 
 You should just need to download the file, unzip it and make sure
 that the `oc` binary is on your PATH.
+
+>   The OpenShift console provides a link to the command-line tools.
+    From the console login page select the **Command Line Tools** option
+    from the **Help** dialogue (the **?** in a circle icon). You will have a
+    link to the **Latest Release** for OpenShift 3.11 where you can download
+    and unpack a suitable package for your OS (linux, Mac, Windows).
 
 ## Logging in to Openshift
 

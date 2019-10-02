@@ -13,22 +13,6 @@ In this exercise we deploy the **PySimple** image from the OpenShift Command-Lin
 >   For a full list of available commands you can visit the OpenShift v3.11
     [CLI reference] page.
 
-## Installing the command-line tools
-Follow the instructions in the **Log into the server** section of
-[Exercise A](../exercise-a/README.md).
-
-From the login page select the **Command Line Tools** option from the **Help**
-dialogue (the **?** in a circle icon). You will have a link to the
-**Latest Release** for OpenShift 3.11 where you can download and unpack a
-suitable package for your OS (linux, Mac, Windows).
-
-_SCREENSHOT_
-
-The **Command Line Tools** page also provides you with a login command and
-_token_ to allow you to login to the OpenShift server from outside the cluster.
-
-_SCREENSHOT_
-
 ## Login
 Login to the server by copying the example login command you were given on the
 **Command Line Tools** page, which will be something like this: -
@@ -157,7 +141,19 @@ To restore the original replica value of 1 it's simply: -
 
     oc scale dc/pysimple --replicas=1
 
-## Investigating resilience
+We can scale the number of replicas beyond 1, which will essentially provide
+more than one endpoint behind the **Service**. In this instance the **Service**
+acts as an internal load-balancer for all the **Pods** it finds.
+
+>   Obviously no all applications benefit from scaling in this way,
+    especially with stateful services where sessions will need to be
+    used to preserve connections to individual containers.
+
+To create two instances of the application run: -
+
+    oc scale dc/pysimple --replicas=2
+
+## Investigating resiliance
 Let's see what happens if your container (**Pod**) dies. 
 
 >   It will more dramatic if you have the console's application **Overview**
@@ -188,7 +184,8 @@ OpenShift creates a new running instance of your container image and
 might possibly even use a different physical compute instance on which to
 run it (if the node had actually crashed it would definitely do so).
 
-During all this there was no disruption to your service as the other pod was still running.
+During all this, With more than one `replica`, there was no disruption to your
+service as the other pod was still running.
 
 ## Delete the project
 Clean up by deleting the project.
