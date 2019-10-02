@@ -95,10 +95,6 @@ our ready-made templates in the exercise directory.
     _one-file-one-object_ pattern, which can help when automating
     deployments.
 
-To deploy the application we need to use the command-line to _process_
-each template, a command that compiles the YAML file into a form usable by
-OpenShift. We then _create_ objects from the processed result.
-
 From the `exercise-b` directory we can install the application's container
 (a **DeploymentConfiguration**), its *Service**  and **Route** with the
 following commands: -
@@ -106,6 +102,12 @@ following commands: -
     oc process -f deployment-config.yaml | oc create -f -
     oc process -f service.yaml | oc create -f -
     oc process -f route.yaml | oc create -f -
+
+>   In the above we're actually running two commands for each template.
+    We run the `process` command on each template to compile it into a form
+    usable by OpenShift. IOn the second part, we _pipe_ the output of the
+    process stage into the `create` command, which creates objects in our
+    project.
 
 If you navigate to the OpenShift web console you should see your project
 and, once the container is pulled from DockerHub and is running the
