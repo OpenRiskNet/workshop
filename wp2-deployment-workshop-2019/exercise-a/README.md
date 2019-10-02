@@ -119,11 +119,12 @@ Clean up by deleting the project.
     by clicking the **okd** icon in the top left of the console window.
 1.  You should be returned to the start and you should see the **My Projects**
     panel on the right.
-1.  Click the vertical ellipses (`...`) ans select **Delete Project**.
-    1.  Enter you project **Name** (e.g. `pysimple`) in the dialogue box
+1.  Click the vertical ellipses (`...`) and select **Delete Project**.
+    1.  Enter you project **Name** (e.g. `user99-exercisea`) in the dialogue box
         and then click the red **Delete** button to begin the deletion process.
-    1.  The project is _marked for deletion_ but this simple project should
-        be removed after a few moments.
+    1.  The project is _marked for deletion_ and on larger projects deletion
+        can take some time. But this simple project should be removed after a
+        few moments and will disappear from the **My Projects** sidebar.
 
 ---
 
