@@ -8,9 +8,9 @@ Here we describe getting setup for the workshop.
 
 ## What you'll need
 
-1. A modern web browser
+1. A modern web browser (ideally Google Chrome)
 2. The `oc` command line tool
-3. A login for the OpenShift environment
+3. A login for the workshop's OpenShift environment
 
 ## User account
 

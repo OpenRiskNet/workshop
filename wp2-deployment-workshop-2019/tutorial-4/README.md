@@ -24,7 +24,7 @@ config then the spec section would look like this:
 	spec:
 	  containers:
 	  - name: pysimple
-		image: alanbchristie/pysimple:2019.3
+		image: alanbchristie/pysimple:2019.4
 		env:
 		- name: GREETING
 		  value: "Hello from the environment"
@@ -38,7 +38,7 @@ If using a parameter it would look like this:
 	spec:
 	  containers:
 	  - name: pysimple
-		image: alanbchristie/pysimple:2019.3
+		image: alanbchristie/pysimple:2019.4
 		env:
 		- name: GREETING
 		  value: ${PARAM_NAME}

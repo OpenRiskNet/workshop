@@ -21,7 +21,7 @@ parameters:
   value: pysimple
 
 - name: IMAGE
-  value: alanbchristie/pysimple:2019.3
+  value: alanbchristie/pysimple:2019.4
 
 # -------
 # Objects
