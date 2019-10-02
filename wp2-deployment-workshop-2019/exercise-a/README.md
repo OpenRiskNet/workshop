@@ -46,11 +46,11 @@ You deploy applications from within a project.
     created. Here you should be greeted by a page explaining how you can
     **Get started with your project**.
 1.  Click the **Deploy Image** button and select the **Image Name** option.
-1.  Do deploy a pre-built container image we simply enter the registry name
+1.  To deploy a pre-built container image we simply enter the registry name
     and tag of the image we want to deploy. As we're using a pre-existing image
     simply enter the image name, e.g. `alanbchristie/pysimple:2019.4`
     and then hit **Return**. Without a registry OpenShift assumes `docker.io`
-    but you can add a registry if you want.
+    but you can add a registry if you want e.g. `docker.io/alanbchristie/pysimple:2019.4`.
 1.  OpenShift queries the image and, after a few moments, displays
     some brief information about it. Here it understands that the image
     opens port `8080` and so a **Service** to access that port will be created.
@@ -61,7 +61,7 @@ You deploy applications from within a project.
     1.  You have an opportunity to define **Environment Variables**. As
         `pysimple` does not require any we can can skip this.
     1.  You can also add **Labels** to objects that get created.
-        It's unnecessary for this example to leave these at their default
+        It's unnecessary for this example so leave these at their default
         values.
 1.  Click the blue **Deploy** button in the boot-right of the panel
     to deploy the application.
@@ -75,7 +75,7 @@ to be taken to your project's **Overview** panel.
 
 ## Project overview
 The overview is a general view of your project's objects.
-As the PySimple image is quite small (around **36MB**) it might be already
+As the PySimple image is quite small (around **36MB**) it might be already running
 by the time you visit the overview page. If not you should see the application
 deployment progress where the image is first pulled from the public registry
 and pass through an initialisation phase before setting down into a _Running_
@@ -96,10 +96,10 @@ you need to add a **Route**.
     This will create an unsecured **Route** from outside the cluster to the
     application's **Service**.
 1.  Click the blue **Create** button at the bottom of the screen and you
-    should see a **Route pysimple was successfully created.** notification
+    should see a `Route pysimple was successfully created` notification
     appear.
     
-You should see a **Route Created** notification as you're returned to a
+You should see a `Route Created` notification as you're returned to a
 compact view of the projects's **Overview**. You should now have a URL
 that connects you to the application.
 
@@ -115,7 +115,7 @@ _SCREENSHOT_
 Clean up by deleting the project.
 
 1.  To delete the project, which deletes the namespace and all the objects we've
-    created (including the Route) navigate to your console's landing page
+    created (including the Route), navigate to your console's landing page
     by clicking the **okd** icon in the top left of the console window.
 1.  You should be returned to the start and you should see the **My Projects**
     panel on the right.
