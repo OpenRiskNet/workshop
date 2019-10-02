@@ -157,19 +157,19 @@ To restore the original replica value of 1 it's simply: -
 
     oc scale dc/pysimple --replicas=1
 
-## Investigating resiliance
-Let's see what happens if your container (**Pod) dies. 
+## Investigating resilience
+Let's see what happens if your container (**Pod**) dies. 
 
 >   It will more dramatic if you have the console's application **Overview**
     screen visible while you run the next few commands.
  
-First list your pods:
+First list your pods (if you scaled to 2 replicas above you should see 2 pods):
 
     oc get pod
 
-...and copy its name (something like `pysimple-1-4df47a5`).
+...and copy the name of one of them (something like `pysimple-1-4df47a5`).
 
-Now let's delete the pod, simulating the situation where it might have crashed,
+Now let's delete that pod, simulating the situation where it might have crashed,
 or the server on which it was running crashed.
 
     oc delete pod/pysimple-1-4df47a5
@@ -177,16 +177,18 @@ or the server on which it was running crashed.
 Replace the last part with the actual name of your pod. And, yes,
 **really** delete it. No harm will be done!
 
->   If you do have te **Overview** screen visible you'll get a dynamic visual
+>   If you do have the **Overview** screen visible you'll get a dynamic visual
     rendering of what happens to deployments of Pods that die. Alternatively,
-    for a less dramatic view execute `oc get pod`.
+    for a less dramatic view execute `oc get pod` on the CLI.
 
 You will notice that quite quickly OpenShift will notice that the required
-number of pods are not running and will rectify this by starting a new pod.
+number of pods are not running and will rectify this by starting a new one.
 
 OpenShift creates a new running instance of your container image and
 might possibly even use a different physical compute instance on which to
-run it.
+run it (if the node had actually crashed it would definitely do so).
+
+During all this there was no disruption to your service as the other pod was still running.
 
 ## Delete the project
 Clean up by deleting the project.
