@@ -2,15 +2,15 @@
 
 [toc](../README.md) | [prev](../tutorial-1/README.md) | [next](../tutorial-2/README.md)
 
-Here we deploy the **PySimple** image from the OpenShift Web Console.
+Here we deploy the **PySimple** image using the OpenShift Web Console.
 
 ---
 
 This exercise uses the OpenRiskNet OpenShift Web Console to deploy a
 container image from a public registry (docker.io). 
 
-The container we use is **PySimple**, a simple Python web server that we'll use
-in several places in this workshop.
+The container we use is **PySimple**, a small Python web server application
+that we'll use in several places in this workshop.
 
 -   You can find the **source code** of the example's container image
     on [GitHub](https://github.com/alanbchristie/PySimple)
@@ -28,20 +28,24 @@ and **password** you've chosen.
 Applications are deployed to _namespaces_. Note: we use the terms
 **project** and **namespace** interchangeably.
 
-1.  To create a namespace (project) for the application click the
+1.  To create a project (namespace) for the application click the
     blue **+ Create Project** button in the top-right of the console.
     
     ![](screen-1.png)
 
-1.  Provide a **Name** for the project. Project names may only contain
-    lower-case letters, numbers, and dashes and must begin with a letter or
-    number. The name is arbitrary but, according to our workshop convention,
-    let's call it `user99-exercisea` (replace `user99` with your username).
+1.  Provide a **Name** for the project.
+
+    Project names may only contain lower-case letters, numbers, and dashes
+    and must begin with a letter or number. The name is arbitrary but,
+    according to our workshop convention, let's call it `user99-exercisea`
+    (replace `user99` with your username).
+    
     1.  You can provide an optional **Display Name**, which does not have the
-        same content restrictions as the **Name**, and a **Description** 
-1.  Click **Create**. You'll receive a
+        same content restrictions as the **Name**, and a **Description**
+
+1.  Click **Create** and you should receive a
     `Project 'user1-exercisea' was successfully created`
-    notification and your project should appear in the **My Projects**
+    notification as your project appears in the **My Projects**
     panel.
 
     ![](screen-2.png)
@@ -83,11 +87,10 @@ You deploy applications from within a project.
         values.
 
 1.  Click the blue **Deploy** button in the boot-right of the panel
-    to deploy the application.
+    to deploy the application and you should be presented with a
+    confirmatory screen like this: -
 
-You should be presented with a confirmatory screen like this: -
-
-![](screen-4.png)
+    ![](screen-4.png)
 
 Click the **Continue to the project overview** link
 to be taken to your project's **Overview** panel.
@@ -101,8 +104,8 @@ deployment progress where the image is first pulled from the public registry,
 passing through an initialisation phase before settling down into a running
 state, indicated by a blue circle.
 
-You should eventually see an **Overview** that should look like the
-following: -
+When the application is running you should eventually see an **Overview**
+like this: -
 
 ![](screen-5.png)
 
@@ -113,21 +116,22 @@ you need to add a **Route**.
 1.  From the project **Overview** page click the **+ Create Route** text on the
     right-hand-side of the **NETWORKING** section.
     
-1.  For this example you can leave all the options at their default values.
-    This will create an unsecured **Route** from outside the cluster to the
+    For this example you can leave all the options at their default values
+    in order to create an unsecured **Route** from outside the cluster to the
     application's **Service**.
     
 1.  Click the blue **Create** button at the bottom of the screen and you
     should see a `Route pysimple was successfully created` notification
     appear.
     
-You should be returned to a compact view of the projects's **Overview**.
-You should now also have a URL that connects you to the application.
+You will be returned to a compact view of the projects's **Overview**
+and you should now have a URL link that can be used to connect you to the
+application.
 
 ![](screen-6.png)
 
-Click the URL and you should be taken to the **PySimple** HTTP
-page where you'll see the application's _Hello World!_ screen: -
+Click the URL link and to be taken to the **PySimple** HTTP
+page, where you'll see the application's _Hello World!_ screen: -
  
     Hello world!
     
@@ -140,8 +144,10 @@ Clean up by deleting the project.
 1.  To delete the project, which deletes the namespace and all the objects we've
     created (including the Route), navigate to your console's landing page
     by clicking the **okd** icon in the top left of the console window.
+    
 1.  You should be returned to the start and you should see the **My Projects**
     panel on the right.
+    
 1.  Click the vertical ellipses (`...`) and select **Delete Project**.
     1.  Enter you project **Name** (e.g. `user99-exercisea`) in the dialogue box
         and then click the red **Delete** button to begin the deletion process.
