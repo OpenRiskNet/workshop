@@ -100,18 +100,24 @@ And execute it, defining any role variables from with a *playbook*
     
 # Operators
 
+Operators provide Kubernetes application orchestration and configuration and
+are distributed as container images.
+
 Operators are a relatively new concept in Kubernetes but are gaining big traction.
-They provide a *Kubernetes native* approach to managing the whole lifecycle of an application,
-not just its deployment. For instance an operator can handle deploying a database as well as
-managing procedures for backing it up and restoring it from backups.
+They provide a containerised *Kubernetes native* approach to managing the whole
+lifecycle of an application, not just its deployment. For instance an operator
+can handle deploying a database as well as managing procedures for upgrading,
+backing it up and restoring it from backups.
 
-A well written operator should be able to be deployed to vanilla Kubernetes or to OpenShift.
+## Advantages
 
-Operators can be defined in a number of ways, using: -
-
--   HELM charts
--   Ansible roles
--   Go
+-   A well written operators can be deployed to Kubernetes or to OpenShift
+-   Provide full-lifecycle control of applications
+-   Business logic distributed as a container image
+-   Can defined in a number of ways: -
+    -   HELM charts (although limited functionality)
+    -   Ansible roles
+    -   Go
 
 ## Examples
 
@@ -122,6 +128,9 @@ available as a simple Kubernetes *ansible operator*. The operator is
 available on [GitHub](https://github.com/alanbchristie/ansible-operator-PySimple)
 and deploys the PySimple *role* into Kubernetes or OpenShift.
  
+A description of the operator and example use can be found in the
+project's GitHub documentation.
+
 ---
 
 [toc](../README.md) | [prev](../tutorial-5/README.md) | next
