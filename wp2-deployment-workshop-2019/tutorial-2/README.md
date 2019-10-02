@@ -13,11 +13,13 @@ In Kubernetes containers run as **pods**. A **pod** is a wrapper for one or more
 interact with **pods** which themselves control the containers running in them. In many cases a **pod** runs a single 
 container and that **pod** can be thought of as the running container.
 
-We can start and stop pods using the API, but we don't usually do that. Instead we create a **deployment config** (or a Deployment)
-that describes the deployment of a pod. The **deployment config** acts as a manager for the pod ensuring it is behaving as required.
-For instance, if the pod crashes the **deployment config** will restart it. If you tell the **deployment config** that you want
-3 replicas of your pod then OpenShift will try to ensure that there are 3 running. If you created a 'bare' pod then none of this 
-would happen - if the pod crashed it stay crashed until you noticed and manually re-created it.
+We can start and stop pods using the API, but we don't usually do that. Instead we create a **deployment config**
+(or a Deployment) that describes the deployment of a pod. The **deployment config** acts as a specification for what
+is expected for the pod ensuring it is behaving as required.
+For instance, if the pod crashes Kubernetes will restart it. If you tell the **deployment config** that you want
+3 replicas of your pod then OpenShift will try to ensure that there are 3 running. 
+If you had created a 'bare' pod then none of this would happen - if the pod crashed it stay crashed until you 
+noticed and manually re-created it.
 
 We just introduced the concept of scaling an app through having multiple replicas. Maybe your pod is providing an API that other pods 
 want to use, and usage meant that one pod could not handle all of your requests. Or maybe you wanted some resiliance so that if a pod 

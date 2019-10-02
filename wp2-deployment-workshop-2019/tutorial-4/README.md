@@ -1,6 +1,6 @@
 # Configuration
 
-[toc](../README.md) | [prev](../exercise-d/README.md) | next
+[toc](../README.md) | [prev](../exercise-d/README.md) | [next](../tutorial-5/README.md)
 
 Here we describe how to configure your applications. 
 
@@ -84,3 +84,5 @@ In all other aspects they behave the same as **ConfigMaps**.
 See the [OpenShift documentation](https://docs.okd.io/latest/dev_guide/secrets.html) for more information
 on using **Secrets**.
 
+---
+[toc](../README.md) | [prev](../exercise-d/README.md) | [next](../tutorial-5/README.md)

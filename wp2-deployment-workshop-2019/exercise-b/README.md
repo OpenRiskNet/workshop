@@ -1,5 +1,11 @@
 # Development Workshop - Exercise B
-Deploying the **PySimple** image from the OpenShift Command-Line.
+
+
+[toc](../README.md) | [prev](../tutorial-2/README.md) | [next](../exercise-c/README.md)
+
+In this exercise we deploy the **PySimple** image from the OpenShift Command-Line.
+
+---
 
 >   This exercise is a repeat of **Exercise A**, which deployed the application
     using the OpenShift Web Console. In this exercise we use OpenShift's
@@ -33,7 +39,7 @@ Login to the server by copying the example login command you were given on the
 ## Creating a namespace (project)
 Use the command-line to create a project.
 
-    oc new-project user99-exerciseb --display-name='User99 PySimple' --description='User99 PySimple (Exercise B)'
+    oc new-project user99-exerciseb'
 
 Replace `user99` with your actual username (similarly for other commands in this exercise which refer to `user99`.
 Project names in OpenShift have global scope so we must have unique names, hence why we include the username as part
@@ -184,5 +190,6 @@ with the command: -
     oc wait project/user99-exerciseb --for=delete
 
 ---
+[toc](../README.md) | [prev](../tutorial-2/README.md) | [next](../exercise-c/README.md)
 
 [cli reference]: https://docs.openshift.com/container-platform/3.11/cli_reference/basic_cli_operations.html

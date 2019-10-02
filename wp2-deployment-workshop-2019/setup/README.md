@@ -2,7 +2,7 @@
 
 [toc](../README.md) | [next](../tutorial-1/README.md)
 
-Here we describe getting setup for the workshop
+Here we describe getting setup for the workshop.
 
 ---
 
@@ -17,8 +17,8 @@ Here we describe getting setup for the workshop
 Each attendee will have their own user account for performing the exercises. A number of users 
 (user1, user2, ...) have been setup with passwords. Open 
 [this Google sheet](https://docs.google.com/spreadsheets/d/1HUgsfSz3dyRDPXQq55t_bGhoDw9CS7U6d1oHadJg94s)
-to see these users and write your name in the `owner` column to claim that username (once you have entered 
-your name reload the page in your browser to ensure that you have successfully claimed that username).
+to see these users and write your name in the `owner` column to claim that username.
+Once you have entered  your name reload the page in your browser to ensure that you have successfully claimed that username.
 
 That username and password will be used for your login to OpenShift and your login to the shared server.
 
@@ -26,7 +26,7 @@ That username and password will be used for your login to OpenShift and your log
 
 When it comes to creating OpenShift project please conform to a convention that allows to identify your project. The convention is that the project should be named `username-exercise`. For insatance if you are `user7` and 
 are working on `exercise C` then name your project `user7-exercisec`. This avoids name clashes and makes it 
-easier or the workshop organisers to step in and assist. 
+easier for the workshop organisers to step in and assist. 
 
 ## Accessing the oc command line tool
 
@@ -45,7 +45,7 @@ To login do something like this:
 
 ```
 ssh <user>@<server>
-password:
+password: ********
 $ 
 
 ```
@@ -59,17 +59,17 @@ You should just need to download the file, unzip it and make sure that the `oc` 
 
 ## Logging in to Openshift
 
-### Web browser
+### Using a web browser
 
-Go to <url> and enter the username and password your claimed in the previous section.
+Go to [url goes here] and enter the username and password your claimed earlier.
 Once logged in you will see a page like this:
 
-<screenshot>
+[screenshot]
 
-### Using oc
+### Using the oc CLI
 
 ```
-oc login -u <useranme> https://server 
+oc login -u <username> https://server 
 ...
 oc whoami
 ```

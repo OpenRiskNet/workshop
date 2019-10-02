@@ -22,15 +22,18 @@ A OpenRiskNet VE is based on Red Hat's [OpenShift](https://www.openshift.com/) a
 and can deploy their own applications as well as the ones that OpenRiskNet provide. This workop shows how to deploy such
 applications.
 
-OpenShift is a distribution of [Kubernetes(https://kubernetes.io/) (K8S) which is a platform for running containers at
-scale. It can be thought of as a distributed (e.g. running across multiple servers) operating system for containers.
+OpenShift is a distribution of [Kubernetes](https://kubernetes.io/) (K8S) which is a platform for running containers at
+scale. It can be thought of as a distributed operating system for containers e.g. allows to run containers across multiple
+servers without having to worry about the implementation details.
 
-But what are containers? Containers allow to package up software that allow that software to run in an environment that is
-isolated from the host operating system or other containers running on that host. Containers use core features of the Linux 
-operating system such as Namespaces and CGroups.
+But what are *containers*? Containers allow to package up software that allow that software to run in an environment that is
+isolated from the host operating system and other containers running on that host. Containers use core features of the Linux 
+operating system such as *Namespaces* and *CGroups*.
 
-Containers were made popular by Docker Inc, as they created simple to use tooling for creating container images and running them.
-Prior to this using containers was something for geeks only! Containers are often referred to as 'Docker containers', but nowadays
+Containers were made popular by Docker Inc, when they created simple tooling for
+creating container images distributing them and running them.
+Prior to this using containers was something for geeks only!
+Containers are often referred to as 'Docker containers', but nowadays
 there are ways to run containers without any of Docker Inc's tooling.
 
 What Kubernetes provides beyond containers is the distributed runtime for containers, allowing containers to be run is a robust 
@@ -46,14 +49,17 @@ required.
 
 At the heart of OpenShift and Kubernetes (think of OpenShift as a distribution of Kubernetes with some additional functionality)
 is a REST API which lets you get information from OpenShift and to make changes to the current running state. For instance you
-could tell OpenShift to run a new container using a specified container image that could be locagted on Docker Hub.
+could tell OpenShift to run a new container using a specified container image that could be located on Docker Hub.
 
 Typically you don't interact directly with the REST API but instead use a web console or a command line interface (CLI). These
-provide a mor euser-friendly way to work with OpenShift, and we'll be using both of these in this workshop.
+provide a more user-friendly way to work with OpenShift, and we'll be using both of these in this workshop.
 
 The OpenShift has the concept of `users` and `projects` (an OpenShift `project` is the same as a Kubernetes `namespace`). To perform
-any userful operations you need to be logged in as a user and for that user to have the appropriate permissions to perfom the
+any useful operations you need to be logged in as a user and for that user to have the appropriate permissions to perfom the
 operations. Running containers are also controlled in respect to what they are allowed to do.
+In the environment we are using for this workshop users can create new projects, and will have admin rights
+in those projects, but not in other projects created by other users unless they are specifically
+granted access. Other OpenShift environments may be set up differently.
 
 To illustrate this let's do the first hands-on exercise that shows how to run a container using the web console.
 

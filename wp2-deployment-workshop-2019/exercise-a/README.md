@@ -1,5 +1,10 @@
 # Development Workshop - Exercise A
-Deploying the **PySimple** image from the OpenShift Web Console.
+
+[toc](../README.md) | [prev](../tutorial-1/README.md) | [next](../tutorial-2/README.md)
+
+Here we deploy the **PySimple** image from the OpenShift Web Console.
+
+---
 
 This exercise uses the OpenRiskNet OpenShift Web Console to deploy a
 container image from a public registry (docker.io). 
@@ -17,13 +22,15 @@ _SCREENSHOT_
 Here, enter the **username** and **password** you've been assigned.
 
 ## Creating a namespace (project)
-Application are deployed to _namespaces_.
+Applications are deployed to _namespaces_. Note: we use the terms **project** and **namespace**
+interchangeably.
+
 
 1.  To create a namespace (project) for the application click the
     blue **+ Create Project** button in the top-right of the console.
-1.  Provide a **Name** for the porject. Project names may only contain
+1.  Provide a **Name** for the project. Project names may only contain
     lower-case letters, numbers, and dashes and must begin with a letter or
-    number. The name is arbitrary but, as we're deploying PySimple,
+    number. The name is arbitrary but, according to our workshop convention,
     let's call it `user99-exercisea` (replace `user99` with you username).
     1.  You can provide an optional **Display Name**, which does not have the
         same content restrictions as the **Name**, and a **Description** 
@@ -74,8 +81,8 @@ you need to add a **Route**.
 1.  From the project **Overview** page click the **Create Route** text in the
     **NETWORKING** section.
 1.  For this example you can leave all the options at their default values.
-    This will create an unsecured **Route** from outside the cluster to the
-    application's **Service**.
+    This will create an unsecured **Route** (e.g. HTTP not HTTPS) from outside 
+    the cluster to the application's **Service**.
 1.  Click the blue **Create** button at the bottom of the screen.
 
 You should see a **Route Created** notification as you're returned to a
@@ -102,3 +109,6 @@ Clean up by deleting the project.
         and then click the red **Delete** button to begin the deletion process.
     1.  The project is _marked for deletion_ but this simple project should
         be removed after a few moments.
+
+---
+[toc](../README.md) | [prev](../tutorial-1/README.md) | [next](../tutorial-2/README.md)

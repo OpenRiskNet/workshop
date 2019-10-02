@@ -1,5 +1,10 @@
 # Development Workshop - Exercise D
-Giving applications **Persistent Storage** (Dynamic).
+
+[toc](../README.md) | [prev](../tutorial-3/README.md) | [next](../tutorial-4/README.md)
+
+This exercise demonstrates giving applications **Persistent Storage**.
+
+---
 
 We'll re-deploy the **PySimple** application but this time give it some
 persistent storage so that we're able to preserve data between container
@@ -14,7 +19,7 @@ Login to the server by copying the example login command you were given on the
 **Command Line Tools** page, which will be something like this: -
 
     oc login https://dev.openrisknet.org:8443 --token=1234
-    oc new-project pysimple --display-name='PySimple' --description='PySimple (Exercise D)'
+    oc new-project user99-exercised'
 
 ## Claiming storage
 In order to use an external (persistent) volume we need to make a _claim_.
@@ -83,3 +88,7 @@ To delete the PySimple project, which also deletes the **PersistentVolumeClaim**
 and (in our case) the underlying storage, simply run: -
 
     oc delete project/pysimple
+
+---
+
+[toc](../README.md) | [prev](../tutorial-3/README.md) | [next](../tutorial-4/README.md)
