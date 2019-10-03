@@ -61,11 +61,11 @@ You deploy applications from within a project.
 
 1.  To deploy a pre-built container image we simply enter the registry name
     and tag of the image we want to deploy. As we're using a pre-existing image
-    simply enter the image name, e.g. `alanbchristie/pysimple:2019.4`
+    simply enter the image name, e.g. `alanbchristie/pysimple:2019.5`
     and then hit **Return**.
     
     Without a registry OpenShift assumes `docker.io`
-    but you can add a registry if you want e.g. `docker.io/alanbchristie/pysimple:2019.4`.
+    but you can add a registry if you want e.g. `docker.io/alanbchristie/pysimple:2019.5`.
 
 1.  OpenShift queries the image and, after a few moments, displays
     some brief information about it.
@@ -149,8 +149,9 @@ Clean up by deleting the project.
     panel on the right.
     
 1.  Click the vertical ellipses (`...`) and select **Delete Project**.
-    1.  Enter you project **Name** (e.g. `user99-exercisea`) in the dialogue box
-        and then click the red **Delete** button to begin the deletion process.
+    1.  Enter you project **Name** (e.g. `${WORKSHOP_USER}-exercisea`)
+        in the dialogue box and then click the red **Delete** button to
+        begin the deletion process.
     1.  The project is _marked for deletion_ and on larger projects deletion
         can take some time. But this small project should be removed in a
         few moments, disappearing from the **My Projects** sidebar when it has.

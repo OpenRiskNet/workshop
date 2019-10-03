@@ -156,7 +156,7 @@ And execute it, defining any role variables from with a *playbook*
   - include_role:
       name: alanbchristie.pysimple
     vars:
-      image_tag: '2019.4'
+      image_tag: '2019.5'
 ```
 
 ---
