@@ -14,8 +14,7 @@ In this exercise we deploy the **PySimple** image from the OpenShift Command-Lin
     [CLI reference] page.
 
 ## Login
-Login to the server by copying the example login command you were given on the
-**Command Line Tools** page, which will be something like this: -
+Login to the server: -
 
     oc login https://dev.openrisknet.org:8443
     ...
