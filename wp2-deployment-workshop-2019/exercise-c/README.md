@@ -5,8 +5,6 @@
 In  this exercise we deploy a real-world OpenRiskNet application (**Lazar**)
 from the OpenShift Command-Line.
 
-**W O R K -  I N - P R O G R E S S**
-
 ---
 
 >   The OpenRiskNet **Lazar** predictive toxicology service application is
