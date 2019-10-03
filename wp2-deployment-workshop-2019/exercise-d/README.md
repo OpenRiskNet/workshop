@@ -11,8 +11,14 @@ persistent storage so that we're able to preserve data between container
 restarts.
 
 >   Here we assume that you've successfully worked through exercises **A**
-    and **B** and have the OpenShift command-ine tools available and are
+    and **B** and have the OpenShift commandline tools available and are
     logged into the workshop's OpenShift cluster.
+
+## Move to correct location in the repo
+
+Change directory to where the files for the exercise are located:
+
+    cd /git/workshop/wp2-deployment-workshop-2019/exercise-d
 
 ## Login and create a project
 Login to the server by copying the example login command you were given on the

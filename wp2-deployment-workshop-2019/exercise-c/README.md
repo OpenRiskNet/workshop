@@ -11,6 +11,12 @@ from the OpenShift Command-Line.
     briefly described on the OpenRiskNet [deployments page]. Here we'll
     concentrate on the deployment of the application.
 
+## Move to correct location in the repo
+
+Change directory to where the files for the exercise are located:
+
+    cd /git/workshop/wp2-deployment-workshop-2019/exercise-c
+
 ## Login
 If you need to, login to the server: -
 

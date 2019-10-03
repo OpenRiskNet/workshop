@@ -13,6 +13,12 @@ In this exercise we deploy the **PySimple** image from the OpenShift Command-Lin
 >   For a full list of available commands you can visit the OpenShift v3.11
     [CLI reference] page.
 
+## Move to correct location in the repo
+
+Change directory to where the files for the exercise are located:
+
+    cd /git/workshop/wp2-deployment-workshop-2019/exercise-b
+
 ## Login
 Login to the server: -
 
