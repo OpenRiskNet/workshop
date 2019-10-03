@@ -153,7 +153,7 @@ To create two instances of the application run: -
 
     oc scale dc/pysimple --replicas=2
 
-## Investigating resiliance
+## Investigating resilience
 Let's see what happens if your container (**Pod**) dies. 
 
 >   It will more dramatic if you have the console's application **Overview**

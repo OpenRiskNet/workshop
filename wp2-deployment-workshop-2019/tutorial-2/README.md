@@ -22,10 +22,10 @@ If you had created a 'bare' pod then none of this would happen - if the pod cras
 noticed and manually re-created it.
 
 We just introduced the concept of scaling an app through having multiple replicas. Maybe your pod is providing an API that other pods 
-want to use, and usage meant that one pod could not handle all of your requests. Or maybe you wanted some resiliance so that if a pod 
+want to use, and usage meant that one pod could not handle all of your requests. Or maybe you wanted some resilience so that if a pod 
 crashed there was another identical one running that could still handle the requests whilst the crashed pod was being replaced. 
 But how would that another application know where the pods were? This changes over time as your pod was scaled up or down or
-as OpenShift reloacted to the pod to a different server. To address thiss you don't access pods directly, you do this through a 
+as OpenShift relocated to the pod to a different server. To address this you don't access pods directly, you do this through a 
 **service** which acts as a load balancer for the pods, and keeps track of where the pods are. That way you just access the service
 which has a location that doesn't change and the service redirects your request to one of the pods it is serving.
 
@@ -33,7 +33,7 @@ When we created the **PySimple** app through the web console in [Exercise A](../
 created a **deployment config** for the PySimple pod, set the number of replicas to 1 (as well as a number of other default parameters)
 and created a **service** for that pod.
 
-You'll reacall that in Exercise a we also manually created a **route** for the **service**. A **route** directs traffic from outside the 
+You'll recall that in Exercise a we also manually created a **route** for the **service**. A **route** directs traffic from outside the 
 OpenShift cluster to the service. The service allows traffic from **within** the cluster to arrive at the pod, but for traffic from
 **outside** the cluster you need a **route** that acts as a proxy for the service. When you created the PySimple app OpenShift doesn't
 know whether you want to route traffic from outside, and assumes you don't. Hence why you need to manually add the route yourself.

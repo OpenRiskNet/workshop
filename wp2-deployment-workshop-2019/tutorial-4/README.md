@@ -17,33 +17,35 @@ Maybe configuring logging. OpenShift provides a number of mechanisms for doing t
 We'll look at each of these in turn.
 
 ## Environment variables
-These form part of the **pod** specification and so can either be specified directly or as parameters if
+These form part of the **Pod** specification and so can either be specified directly or as parameters if
 using templates. For instance if we wanted to define an environment variable in our PySimple deployment
-config then the spec section would look like this:
+config then the spec section would look like this: -
+
 ```yaml
-	spec:
-	  containers:
-	  - name: pysimple
-		image: alanbchristie/pysimple:2019.4
-		env:
-		- name: GREETING
-		  value: "Hello from the environment"
+spec:
+  containers:
+  - name: pysimple
+    image: alanbchristie/pysimple:2019.4
+    env:
+    - name: GREETING
+      value: "Hello from the environment"
 ```
+
 This would result in an environment variable being defined for the running container equivalent to had the following been
 run: `export GREETING="Hello from the environment"`
 
-If using a parameter it would look like this:
+If using a parameter it would look like this: -
 
 ```yaml
-	spec:
-	  containers:
-	  - name: pysimple
-		image: alanbchristie/pysimple:2019.4
-		env:
-		- name: GREETING
-		  value: ${PARAM_NAME}
+spec:
+  containers:
+  - name: pysimple
+    image: alanbchristie/pysimple:2019.4
+    env:
+    - name: GREETING
+      value: ${PARAM_NAME}
 ```
-with the PARAM_NAME parameter being defined elsewhere in the template like this:
+with the PARAM_NAME parameter being defined elsewhere in the template like this: -
 
 ```yaml
 parameters:
@@ -51,7 +53,8 @@ parameters:
   value: "Hello world!"
 ```
 
-Environment variables can also be set from ConfigMaps and Secrets. Mote to come on this later.
+Environment variables can also be set from ConfigMaps and Secrets.
+Mote to come on this later.
 
 ## Persistent Volumes
 Volumes (see [Persistent storage](../tutorial-3/README.md)) could potentially contain configuration information.
@@ -66,13 +69,13 @@ allowing that data to be mounted into the running container as a volume or to de
 
 To do this you need to:
 
-1. create the **ConfigMap** with the required data.
-2. Define that **ConfigMap** as a volume in the **pod** (or **Deployment config**) spec
-3. Mount that volume into the container at the appropriate location or define environment variables from the
-contents of the **ConfigMap** 
+1.  Create the **ConfigMap** with the required data.
+1.  Define that **ConfigMap** as a volume in the **pod** (or **Deployment config**) spec
+1.  Mount that volume into the container at the appropriate location or define
+    environment variables from the contents of the **ConfigMap** 
 
-See the [OpenShift documentation](https://docs.okd.io/latest/dev_guide/configmaps.html) for more information
-on using **ConfigMaps**.
+See the [OpenShift documentation](https://docs.okd.io/latest/dev_guide/configmaps.html)
+for more information on using **ConfigMaps**.
 
 
 __EXAMPLE NEEDED__
@@ -83,7 +86,7 @@ __EXAMPLE NEEDED__
 You might typically use a **Secret** for handling usernames, passwords or private keys.
 In other aspects they behave the same as **ConfigMaps**.
 
-A typical pattern is to generate a password in a template like this: 
+A typical pattern is to generate a password in a template like this: -
 
 ```yaml
 parameters:
@@ -95,8 +98,9 @@ parameters:
   required: true
 ```
 
-Then in the same template use that generated parameter to create a **secret** containing values for the username
-and password:
+Then in the same template use that generated parameter to create a **secret**
+containing values for the username and password: -
+
 ```yaml
 - kind: Secret
   apiVersion: v1
@@ -109,31 +113,33 @@ and password:
     database-admin-password: "${DB_ADMIN_PASSWORD}"
 ```
 
-Then to use that secret to define environment variables in the container:
+Then to use that secret to define environment variables in the container: -
+
 ```yaml
+spec:
+template:
+  metadata:
+    name: database
   spec:
-    template:
-      metadata:
-        name: database
-      spec:
-        ...
-        containers:
-        - name: database
-          image: centos/postgresql-95-centos7
-          env:
-          - name: POSTGRESQL_ADMIN_USER
-            valueFrom:
-              secretKeyRef:
-                name: database-secrets
-                key: database-admin-user
-          - name: POSTGRESQL_ADMIN_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: database-secrets
-                key: database-admin-password
+    ...
+    containers:
+    - name: database
+      image: centos/postgresql-95-centos7
+      env:
+      - name: POSTGRESQL_ADMIN_USER
+        valueFrom:
+          secretKeyRef:
+            name: database-secrets
+            key: database-admin-user
+      - name: POSTGRESQL_ADMIN_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: database-secrets
+            key: database-admin-password
 ```
 
-Using this process you will notice that:
+Using this process you will notice that: -
+
 1. the password is randomly generated
 1. no person needs to see the generated password - it is stored as a **secret**
 1. the person deploying the database does not need to know the password
@@ -142,4 +148,5 @@ See the [OpenShift documentation](https://docs.okd.io/latest/dev_guide/secrets.h
 on using **Secrets**.
 
 ---
+
 [toc](../README.md) | [prev](../exercise-d/README.md) | [next](../tutorial-5/README.md)

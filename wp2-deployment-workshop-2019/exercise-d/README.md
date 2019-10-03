@@ -54,17 +54,21 @@ by adding a `volume` declaration and a `volumeMount`.
 
 The `volume` attaches the claim (by name) to the container: -
 
-    volumes:
-    - name: pysimple
-      persistentVolumeClaim:
-        claimName: pysimple
+```yaml
+volumes:
+- name: pysimple
+  persistentVolumeClaim:
+    claimName: pysimple
+```
 
 The `volumeMount` defines its mount-point (i.e. `/data` in our case)
 inside the container: -
 
-    volumeMounts:
-    - mountPath: /data
-      name: pysimple
+```yaml
+volumeMounts:
+- mountPath: /data
+  name: pysimple
+```
 
 ## Deploying the application image
 Just as we did with **Exercise B** let's deploy the application, which consists

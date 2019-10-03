@@ -27,17 +27,18 @@ These probes are typically simple `ping` like endpoints that you implement in yo
 that your pod is alive or ready. For example, **PySimple** is a simple HTTP server so a suitable probe would be to check
 that the pod is respond to HTTP requests. The relevant section from the **Deployment Config** template looks like this:
 
-```
-          readinessProbe:
-            tcpSocket:
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          livenessProbe:
-            tcpSocket:
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
+```yaml
+readinessProbe:
+  tcpSocket:
+    port: 8080
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+livenessProbe:
+  tcpSocket:
+    port: 8080
+  initialDelaySeconds: 3
+  periodSeconds: 3
 ``` 
 
 Here we use the same endpoint for the **liveness** and **readiness** probes, but in other cases you might want to use
@@ -55,7 +56,6 @@ Defining **liveness** and **readiness** probes for your applications is strongly
 Doing so often requires a bit of tinkering with the parameters. If they are too stringent then Kubernetes
 will continually kill and restart the pod before it has a chance to start.
 
-
 ## Resource Requests and limits
 
 When Kubernetes schedules a pod to run it trying to schedule it on a node that has sufficient memory and CPU for that
@@ -68,19 +68,21 @@ if memory and CPU that you pod needs. These are described in detail
 The **request** is the amount of memory and CPU that needs to be set aside for your container. Kubernetes will schedule
 your pod to a node that has that amount of memory available. 
 
-The **limit** is the maximum amount or memory or CPU that is allowed to be consumed. **Limits** are higher than
-**requests** so that, for instance you can state that your container will typically require 0.5 CPU cores, but on
-occasions it might need 4 CPU cores.
+The **limit** is the maximum amount or memory or CPU that is allowed to be consumed.
+**Limits** are higher than **requests** so that, for instance you can state
+that your container will typically require 0.5 CPU cores (expressed as the value `500m`),
+but on occasions it might need 4 CPU cores.
 
-As an example here is how are defined for the **PySimple** application:
-```
-          resources:
-            limits:
-              cpu: 1000m
-              memory: 32Mi
-            requests:
-              cpu: 100m
-              memory: 8Mi
+As an example here is what is defined for the **PySimple** application: -
+
+```yaml
+resources:
+  limits:
+    cpu: 1000m
+    memory: 32Mi
+  requests:
+    cpu: 100m
+    memory: 8Mi
 ```
 
 CPU resources are specified in milli cpu cores so `1000m` is 1 CPU core.
@@ -105,12 +107,16 @@ all.
 
 Our general recommendation is:
 
-1. First run your application without resource **requests** and **limits** and monitor its memory and CPU usage over
-time to get an idea of what might be appropriate.
-1. Then define generous resource **requests** and **limits** that you are confident are in excess of what is really
-needed.
-1. Then continue to monitor usage and gradually reduce the resource **requests** and **limits** to values that seem to be
-correct. 
+1.  First run your application without resource **requests** and **limits**
+    and monitor its memory and CPU usage over time to get an idea of what
+    might be appropriate.
+    
+1.  Then define generous resource **requests** and **limits** that you are
+    confident are in excess of what is really needed.
+    
+1.  Then continue to monitor usage and gradually reduce the resource
+    **requests** and **limits** to values that seem to be correct. 
 
 ---
+
 [toc](../README.md) | [prev](../tutorial-4/README.md) | [next](../tutorial-6/README.md)

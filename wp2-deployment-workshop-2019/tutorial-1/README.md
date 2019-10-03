@@ -19,7 +19,7 @@ A VE can be deployed to in-house hardware or to the cloud, and can be run on a s
 
 A OpenRiskNet VE is based on Red Hat's [OpenShift](https://www.openshift.com/) and in particular the community version
 (e.g. free to use) [OKD](https://www.okd.io/). Anyone can create a OpenRiskNet VE for their own purposes free of charge
-and can deploy their own applications as well as the ones that OpenRiskNet provide. This workop shows how to deploy such
+and can deploy their own applications as well as the ones that OpenRiskNet provide. This workshop shows how to deploy such
 applications.
 
 OpenShift is a distribution of [Kubernetes](https://kubernetes.io/) (K8S) which is a platform for running containers at
@@ -36,12 +36,14 @@ Prior to this using containers was something for geeks only!
 Containers are often referred to as 'Docker containers', but nowadays
 there are ways to run containers without any of Docker Inc's tooling.
 
-What Kubernetes provides beyond containers is the distributed runtime for containers, allowing containers to be run is a robust 
-and highly scaleable manner.
+What Kubernetes provides beyond containers is the distributed runtime for
+containers, allowing containers to be run is a robust and highly scalable
+manner.
 
-What OpenShift provides beyind Kubernetes is hardened security, a fully fledged continuous integration and continuous development
-environment which lets you build the applicatons form source as well as running them, plus the option for commercial support if
-required. 
+What OpenShift provides beyond Kubernetes is hardened security, a fully
+fledged continuous integration and continuous development
+environment which lets you build the applications form source as well as
+running them, plus the option for commercial support if required. 
 
 ![openshift-k8s-containers](openshift-k8s-containers.png)
 
@@ -55,7 +57,7 @@ Typically you don't interact directly with the REST API but instead use a web co
 provide a more user-friendly way to work with OpenShift, and we'll be using both of these in this workshop.
 
 The OpenShift has the concept of `users` and `projects` (an OpenShift `project` is the same as a Kubernetes `namespace`). To perform
-any useful operations you need to be logged in as a user and for that user to have the appropriate permissions to perfom the
+any useful operations you need to be logged in as a user and for that user to have the appropriate permissions to perform the
 operations. Running containers are also controlled in respect to what they are allowed to do.
 In the environment we are using for this workshop users can create new projects, and will have admin rights
 in those projects, but not in other projects created by other users unless they are specifically
@@ -64,6 +66,5 @@ granted access. Other OpenShift environments may be set up differently.
 To illustrate this let's do the first hands-on exercise that shows how to run a container using the web console.
 
 ---
+
 [toc](../README.md) | [prev](../setup/README.md) | [next](../exercise-a/README.md)
-
-

@@ -30,9 +30,11 @@ For example, the following very simple excerpt defines a task that results
 in the command-line execution of `oc get pvc` with the result (stdout) written
 to the variable `pvc_result`: -
 
-    - name: Get known PVCs (current project)
-        command: oc get pvc
-        register: pvc_result
+```yaml
+- name: Get known PVCs (current project)
+    command: oc get pvc
+    register: pvc_result
+```
 
 ## Advantages
 
@@ -136,8 +138,10 @@ find the variables that control the PySimple deployment.
 To use a Galaxy role define it with the aid of a `requirements.yml`
 file: -
 
-    - src: alanbchristie.pysimple
-      version: 1.0.0
+```yaml
+- src: alanbchristie.pysimple
+  version: 1.0.0
+```
 
 And install it using the `ansible-galaxy` tool: -
 
@@ -146,12 +150,14 @@ And install it using the `ansible-galaxy` tool: -
 And execute it, defining any role variables from with a *playbook*
 (or *role*) with a simple YAML construct: -
 
-    - hosts: servers
-      tasks:
-      - include_role:
-          name: alanbchristie.pysimple
-        vars:
-          image_tag: '2019.4'
+```yaml
+- hosts: servers
+  tasks:
+  - include_role:
+      name: alanbchristie.pysimple
+    vars:
+      image_tag: '2019.4'
+```
 
 ---
   

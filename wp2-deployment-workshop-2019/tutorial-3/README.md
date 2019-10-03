@@ -9,7 +9,7 @@ Here we describe how to make your applications use persistent storage so that da
 So far all our pods have been _ephemeral_, meaning that all data is stored in the container and is lost when the
 container stops. For things like databases this is no good - we can't loose our data every time the container stops!
 
-The solution to this is you use persitsent storage for your pods. This is in the form of **volumes** that can be thought
+The solution to this is you use persistent storage for your pods. This is in the form of **volumes** that can be thought
 of as a disk that is mounted into your container at the required location. This allows the storage to be external to the pod.
 When the pod stops the data remains. When a new pod is started that volume with its existing data is added to the pod and mounted
 into the running container.
@@ -52,12 +52,17 @@ spec:
       storage: 1Gi
 ```
 
-When creating a PVC you have a number of options:
-* Use dynamic storage if it is available, optionally specifying a **StorageClass**, the required **accessMode** and size.
-In this case the storage is dynamically created (e.g. using a cloud volume such as EBS).
-* Rely on there being PVs available that can be claimed (or first create them yourself).
-You specify the size of storage you need and the **accessMode** and Kubernetes will allocate
-an existing PV to you. 
+When creating a PVC you have a number of options: -
+
+*   Use dynamic storage if it is available, optionally specifying a
+    **StorageClass**, the required **AccessMode** and size.
+    In this case the storage is dynamically created
+    (e.g. using a cloud volume such as EBS).
+*   Rely on there being PVs available that can be claimed
+    (or first create them yourself). You specify the size of storage you
+    need and the **AccessMode** and Kubernetes will allocate
+    an existing PV to you.
+
 If more than one is available it will allocate the smallest one that satisfies your request.
 The problem with this approach is that you do not aways get the PV that you might have expected.
 And someone else might get the PV that you wanted before you get to claim it.
@@ -67,9 +72,8 @@ it, or create the PVC with a definition of the PV that it is to use, or both of 
 Examples of setting up NFS and creating PVs and PVCs that use NFS can be found 
 [here](https://github.com/OpenRiskNet/home/blob/master/openshift/recipes/creating-persistent-volumes-nfs.md).
 
-
 In the next exercise will illustrate how to create a PVC that uses a NFS based PV. 
  
-
 ---
+
 [toc](../README.md) | [prev](../exercise-b/README.md) | [next](../exercise-d/README.md)
