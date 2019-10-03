@@ -26,7 +26,7 @@ want to use, and usage meant that one pod could not handle all of your requests.
 crashed there was another identical one running that could still handle the requests whilst the crashed pod was being replaced. 
 But how would that another application know where the pods were? This changes over time as your pod was scaled up or down or
 as OpenShift relocated to the pod to a different server. To address this you don't access pods directly, you do this through a 
-**service** which acts as a load balancer for the pods, and keeps track of where the pods are. That way you just access the service
+**service** which acts as a load-balancer for the pods, and keeps track of where the pods are. That way you just access the service
 which has a location that doesn't change and the service redirects your request to one of the pods it is serving.
 
 When we created the **PySimple** app through the web console in [Exercise A](../exercise-a/README.md) what happened is that OpenShift

@@ -58,6 +58,7 @@ When creating a PVC you have a number of options: -
     **StorageClass**, the required **AccessMode** and size.
     In this case the storage is dynamically created
     (e.g. using a cloud volume such as EBS).
+    
 *   Rely on there being PVs available that can be claimed
     (or first create them yourself). You specify the size of storage you
     need and the **AccessMode** and Kubernetes will allocate

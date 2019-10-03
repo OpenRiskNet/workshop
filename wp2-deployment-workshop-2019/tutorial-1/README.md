@@ -26,8 +26,11 @@ OpenShift is a distribution of [Kubernetes](https://kubernetes.io/) (K8S) which 
 scale. It can be thought of as a distributed operating system for containers e.g. allows to run containers across multiple
 servers without having to worry about the implementation details.
 
-But what are *containers*? Containers allow to package up software that allow that software to run in an environment that is
-isolated from the host operating system and other containers running on that host. Containers use core features of the Linux 
+But what are *containers*?
+
+Containers allow to package up software that allow that software to run in an
+environment that is isolated from the host operating system and other containers
+running on that host. Containers use core features of the Linux 
 operating system such as *Namespaces* and *CGroups*.
 
 Containers were made popular by Docker Inc, when they created simple tooling for

@@ -70,7 +70,9 @@ allowing that data to be mounted into the running container as a volume or to de
 To do this you need to:
 
 1.  Create the **ConfigMap** with the required data.
+
 1.  Define that **ConfigMap** as a volume in the **pod** (or **Deployment config**) spec
+
 1.  Mount that volume into the container at the appropriate location or define
     environment variables from the contents of the **ConfigMap** 
 
