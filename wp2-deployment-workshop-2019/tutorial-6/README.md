@@ -38,7 +38,7 @@ to the variable `pvc_result`: -
 -   More than 2,800 built-in modules from package management using `apk`
     to `zfs` for managing zfs file systems
 -   Simple and richer Kubernetes object management via the built-in `k8s` module
--   Richer dynamic control of objects (Ansible variables and [jinja2] templating mechanism)
+-   Richer dynamic control of objects (Ansible variables and [jinja] templating)
 
 ## Examples
 
@@ -188,6 +188,7 @@ project's GitHub documentation.
 
 [ansible]: https://www.ansible.com/resources/get-started
 [galaxy]: https://galaxy.ansible.com
+[jinja]: https://palletsprojects.com/p/jinja/
 [keycloak]: https://www.keycloak.org
 [rabbitmq]: https://www.rabbitmq.com
 [roles]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
