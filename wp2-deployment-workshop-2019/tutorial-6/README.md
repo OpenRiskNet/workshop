@@ -14,6 +14,8 @@ These are not widely used in OpenShift largely because of security concerns.
 We therefore do not cover them in detail here, but for more information on HELM
 look [here](https://helm.sh/).
 
+---
+
 # Ansible playbooks
 
 [Ansible] is one of a number of open-source *Infrastructure As Code* (IaC)
@@ -97,6 +99,8 @@ And Ansible Role **playbooks** that include orchestrating: -
 -   Ansible k8s module templates
     ([squonk-app.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/tasks/squonk-app.yaml))
 
+---
+
 # Ansible roles (and Ansible Galaxy)
 
 [Roles] are a more structured variant of **playbooks**.
@@ -148,7 +152,9 @@ And execute it, defining any role variables from with a *playbook*
           name: alanbchristie.pysimple
         vars:
           image_tag: '2019.4'
-    
+
+---
+  
 # Operators
 
 Operators provide Kubernetes application orchestration and configuration and
