@@ -1,6 +1,6 @@
 # Advanced deployment techniques
 
-[toc](../README.md) | [prev](../tutorial-5/README.md) | next
+[toc](../README.md) | [prev](../tutorial-5/README.md)
 
 Here we describe alternative approaches to deploying applications that are
 better suited for more complex applications.
@@ -190,7 +190,7 @@ project's GitHub documentation.
 
 ---
 
-[toc](../README.md) | [prev](../tutorial-5/README.md) | next
+[toc](../README.md) | [prev](../tutorial-5/README.md)
 
 [ansible]: https://www.ansible.com/resources/get-started
 [galaxy]: https://galaxy.ansible.com
