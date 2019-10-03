@@ -14,13 +14,13 @@ from the OpenShift Command-Line.
 ## Login
 If you need to, login to the server: -
 
-    oc login https://dev.openrisknet.org:8443
+    oc login -u ${WORKSHOP_USER} https://dev.openrisknet.org:8443
     ...
 
 ## Creating a namespace (project)
 Use the command-line to create a project: -
 
-    oc new-project user99-exercisec
+    oc new-project ${WORKSHOP_USER}-exercisec
 
 ## Deploying the application image
 The OpenShift deployment of **Lazar** is defined in a single YAML file,
@@ -49,7 +49,6 @@ the Ansible **k8s** module.
     The latest production template and documentation can be found on the
     OpenRiskNet site's [deployments page].
 
-### Parameters
 **Lazar** is controlled through the use of a number of **Parameters**,
 defined in its OpenShift template so we need to understand how we can *override*
 template parameters from the command-line before we can install it as its
@@ -58,20 +57,17 @@ If you inspect the `lazar.yaml` template you'll see default values for
 parameters like the `IMAGE_NAME` and `ROUTE_NAME`.
 
 You can change parameter values on the command-line via the `process` command's
-`-p` option. We'll see that when we put all this together in the next section.
+`-p` option.
 
+Because several users may be running this Exercise at the same time
+we *must* change one parameter, the `ROUTE_NAME`. We can't all deploy **Lazar**
+and use the same **Route** name. We can do this simply by using our username.
 
-### Putting it all together
+    oc process -f lazar.yaml -p ROUTE_NAME=${WORKSHOP_USER}-exercisec | oc create -f -
 
->   Because several users may be running this Exercise at the same time
-    we *must* change one parameter, the `ROUTE_NAME`. We can't all deploy **Lazar**
-    and use the same **Route** name. We can do this simply by using our username.
-
-    oc process -f lazar.yaml -p ROUTE_NAME=user1-exercisec | oc create -f -
-
-Lazar is a large and complex application, that may take a few moments to
-become 'ready'. You can visit the project **Overview** page to see the
-deployment state of the application. At some point it should settle down
+Lazar is a large and complex application, that may take a minute or so to
+become 'ready'. You can visit your project's **Overview** page to see the
+state of the deployment. At some point it should settle down
 and you should see the **Pod** with its familiar blue outline, the **Service**
 and **Route**: -
 
@@ -82,16 +78,16 @@ using the **Route** link: -
 
 ![](screen-2.png)
 
->   The **Lazar** **Route** expects secure traffic via the HTTPS protocol.
+>   The Lazar **Route** expects secure traffic via the HTTPS protocol.
     Insecure traffic is redirected. Consequently you may be warned about this
     by your browser. For now you should acknowledge the security warning and
-    proceed to the application website. Feel free to inspect the template to
-    see these object properties.
+    then proceed to the application website regardless. Feel free to inspect
+    the template to see these object properties.
 
 ## Delete the project
 Clean up by deleting the project.
 
-    oc delete project/user99-exercisec
+    oc delete project/${WORKSHOP_USER}-exercisec
     
 ---
 

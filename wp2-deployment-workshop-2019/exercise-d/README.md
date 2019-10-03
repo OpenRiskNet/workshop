@@ -20,7 +20,7 @@ Login to the server by copying the example login command you were given on the
 
     oc login https://dev.openrisknet.org:8443
     ...
-    oc new-project user99-exercised
+    oc new-project ${WORKSHOP_USER}-exercised
 
 ## Claiming storage
 In order to use an external (persistent) volume we need to make a _claim_.
@@ -49,7 +49,7 @@ console: -
 We declare `volumes` in our application **DeploymentConfig** when we want to
 attach external, persistent volumes.
 
-The **DeploymentConfig** in this exercise extends the one in `exercise-b`
+The **DeploymentConfig** in this exercise extends the one in **Exercise B**
 by adding a `volume` declaration and a `volumeMount`.
 
 The `volume` attaches the claim (by name) to the container: -
@@ -91,7 +91,7 @@ disk-based database) are remounted into the new container.
 
 First, let's check the current application's response with curl: -
 
-    curl http://pysimple-user99-exercised.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exercised.dev.openrisknet.org/
 
 You should get a value for `Num visits` that is `1`.
 
@@ -104,7 +104,7 @@ Lets's delete, wait and then re-create the application...
 With the application restored, if we `curl` the application's **Route** now,
 we'll see that the `Num visits` is now `2`: -
 
-    curl http://pysimple-user99-exercised.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exercised.dev.openrisknet.org/
 
 The application was removed and re-deployed and its disk-based data was
 persisted.
@@ -115,7 +115,7 @@ Clean up by deleting the project.
 To delete the PySimple project, which also deletes the **PersistentVolumeClaim**
 and (in our case) the underlying storage, simply run: -
 
-    oc delete project/user99-exercised
+    oc delete project/${WORKSHOP_USER}-exercised
 
 ---
 

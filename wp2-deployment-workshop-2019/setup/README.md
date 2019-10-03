@@ -81,11 +81,18 @@ Once logged in you will see a page like this:
 [screenshot]
 
 ### Using the oc CLI
+The Exercises provide command-line examples that, to simplify their execution,
+rely in the existence of the `WORKSHOP_USER` environment variable. Now that you
+you have selected your username from the spreadsheet, set the environment
+variable in your shell so you can cut-and-paste from the examples, replacing
+`user1` with your chosen username: -
+
+    export WORKSHOP_USER=user1
 
 The `oc` command is used to execute all of the OpenShift commands we'll be using.
 But first, you need to use `oc` to connect to the chosen server: -
 
-    oc login -u <username> https://server 
+    oc login -u ${WORKSHOP_USER} https://server 
 
 You can always run `oc` to get some basic help: -
     

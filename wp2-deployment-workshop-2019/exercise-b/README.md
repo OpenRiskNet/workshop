@@ -16,18 +16,16 @@ In this exercise we deploy the **PySimple** image from the OpenShift Command-Lin
 ## Login
 Login to the server: -
 
-    oc login https://dev.openrisknet.org:8443
+    oc login -u ${WORKSHOP_USER} https://dev.openrisknet.org:8443
     ...
 
 ## Creating a namespace (project)
 Use the command-line to create a project: -
 
-    oc new-project user99-exerciseb
+    oc new-project ${WORKSHOP_USER}-exerciseb
 
-Replace `user99` with your actual username (similarly for other commands in
-this exercise which refer to `user99`). Project names in OpenShift have global
-scope so we must have unique names, hence why we include the username as part
-of the project name.
+>   Project names in OpenShift have global scope so we must have unique names,
+    hence why we include the username as part of the project name.
 
 >   Using `--display-name` and `--description` for the `new-project` command
     is encouraged but optional.
@@ -38,7 +36,7 @@ You deploy applications from within a project.
 You are automatically entered into new projects as you create them but you can
 always make sure you're in the right project with the command: -
 
-    oc project user99-exerciseb
+    oc project ${WORKSHOP_USER}-exerciseb
 
 You can see which project you're in with the command: -
 
@@ -101,7 +99,7 @@ and, once the container is pulled from DockerHub and is running the
 Click on the route's link to visit the application, or you can use
 `curl` from the command-line: -
 
-    curl http://pysimple-user99-exerciseb.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exerciseb.dev.openrisknet.org/
 
 ## Scaling the application
 With the application running we can scale it up and down by
@@ -122,9 +120,7 @@ zero: -
 ![](screen-4.png)
 
 >   Many object names can be abbreviated, the above command can
-    also be shortened   to: -
-
-        oc scale dc/pysimple --replicas=0
+    also be shortened to `oc scale dc/pysimple --replicas=0`
 
 The replica state can also be confirmed by _describing_ the deployment
 object using the command-line tools: -
@@ -136,7 +132,7 @@ Which should return something like the following: -
     Replicas:	0
 	Replicas:	0 current / 0 desired
 
-To restore the original replica value of 1 it's simply: -
+To restore the original replica value of 1, it's simply: -
 
     oc scale dc/pysimple --replicas=1
 
@@ -191,12 +187,12 @@ Clean up by deleting the project.
 
 To delete the PySimple project simply run: -
 
-    oc delete project/user99-exerciseb
+    oc delete project/${WORKSHOP_USER}-exerciseb
     
 As project deletion can take a some time you can always wait for deletion
 with the command: -
 
-    oc wait project/user99-exerciseb --for=delete
+    oc wait project/${WORKSHOP_USER}-exerciseb --for=delete
 
 Which may conclude with the message: -
 

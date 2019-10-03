@@ -37,8 +37,8 @@ Applications are deployed to _namespaces_. Note: we use the terms
 
     Project names may only contain lower-case letters, numbers, and dashes
     and must begin with a letter or number. The name is arbitrary but,
-    according to our workshop convention, let's call it `user99-exercisea`
-    (replace `user99` with your username).
+    according to our workshop convention, let's call it `${WORKSHOP_USER}-exercisea`
+    (replace `${WORKSHOP_USER}` with your username).
     
     1.  You can provide an optional **Display Name**, which does not have the
         same content restrictions as the **Name**, and a **Description**
