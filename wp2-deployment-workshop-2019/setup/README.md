@@ -11,6 +11,21 @@ Here we describe getting setup for the workshop.
 1. A modern web browser (ideally Google Chrome)
 2. The `oc` command line tool
 3. A login for the workshop's OpenShift environment
+4. Access to a clone of the GitHub repository
+
+## Operating environment
+
+You can perform the exercises in two ways:
+
+**Option 1: login to a VM that we provide that provides all the pre-requisites**
+
+This is the preferred approach. You need to grab yourself a username and then ssh to the server as described below.
+
+**Option 2: use your own laptop/server**
+
+Choose this option if you prefer, but our ability to assist if things go wrong may be limited.
+As well as grabbing yourself a username you will need to install the `oc` client and clone the GitHub repository as 
+described below.
 
 ## User account
 
@@ -116,6 +131,40 @@ functional local OpenShift environment that can be used for development.
 
 See [these instructions](https://docs.okd.io/latest/minishift/getting-started/installing.html)
 for installing and running Minishift.
+
+## GitHub repo
+
+The workshop exercises use files from the GitHub repo that contains this workshop material. You need to have a clone
+of the repo to get access to the files.
+
+**If using the provided VM (Option 1)**
+
+The cloned repo is already present in VM. You will find it at `/git/workshop`.
+
+You have `read-only` access to the files so cannot make changes. If you want to edit the files then choose one of the 
+methods described next to get a copy in your user space.
+
+**If using your own laptop/server (Option 2)**
+
+First install the Git version control software on your computer if not already present. See
+[here](https://git-scm.com/downloads) for a version for your computer.
+
+Now clone the repo:
+
+    git clone https://github.com/OpenRiskNet/workshop.git
+    
+Alternatively you can download a zip file of the repo from 
+[here](https://github.com/OpenRiskNet/workshop/archive/master.zip).
+Once downloaded unzip the contents to somewhere on your computer. 
+
+**Repository layout**
+
+Whichever mechanism you use to access the GitHub repo you need to start from the `wp2-deployment-workshop-2019` directory
+in the repo. e.g.
+
+    cd /git/workshop/wp2-deployment-workshop-2019
+
+In there you will find directories for each of the exercises and tutorials.
 
 ---
 
