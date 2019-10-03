@@ -38,12 +38,44 @@ to the variable `pvc_result`: -
 -   More than 2,800 built-in modules from package management using `apk`
     to `zfs` for managing zfs file systems
 -   Simple and richer Kubernetes object management via the built-in `k8s` module
+-   Richer dynamic control of objects (Ansible variables and advanced templating mechanism)
 
 ## Examples
 
 ### Squonk
 
-Describe the Squonk playbooks
+The [Squonk Computational Notebook] is a complex application consisting of
+numerous container images that also rely on additional infrastructure
+components that include: -
+
+-   a messaging framework based on [RabbitMQ]
+-   a PostgresQL database
+-   an authentication service based on [Keycloak] 
+
+To orchestrate the suite of containers and configure the database and
+authentication service a number of playbooks and object templates have been
+developed, resulting in simple one-click installation of the application
+and its orchestration formed from: -
+
+-   26 Ansible *playbooks*
+-   6 Ansible *roles*
+-   90+ Role playbook files
+-   50+ Kubernetes/OpenShift YAML template files
+-   100+ variables
+
+The open-source repository contains some interesting **OpenShift templates**
+that include: -
+
+-   **ConfigMap** and **Job** object templates for database user-creation !
+-   **ConfigMap** and **Job** object templates for Keycloak configuration ! 
+-   **CronJob** object templates for regular database backups !
+-   **DeploymentConfig** and **Service** for PostgreSQL !
+-   **Secrets** !
+-   **PersistentVolume** and corresponding **PersistentVolumeClaim** object templates (NFS) !
+
+And Role playbooks that include:
+
+-   **TDB**
 
 # Ansible roles (and Ansible Galaxy)
 
@@ -61,10 +93,9 @@ Ansible refers to as the [Galaxy].
 
 All the advantages of playbooks plus: -
 
--   Structured
--   Meta-data concept
--   Dependency declarations
--   Easily shared
+-   Structure
+-   Community sharing via Ansible Galaxy
+-   Meta-data and dependency declarations
 -   Unit and functional test framework
  
 ## Examples
@@ -137,4 +168,7 @@ project's GitHub documentation.
 
 [ansible]: https://www.ansible.com/resources/get-started
 [galaxy]: https://galaxy.ansible.com
+[keycloak]: https://www.keycloak.org
+[rabbitmq]: https://www.rabbitmq.com
 [roles]: https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
+[squonk computational notebook]: https://squonk.it
