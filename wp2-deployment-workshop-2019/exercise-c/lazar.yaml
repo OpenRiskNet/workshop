@@ -1,0 +1,193 @@
+---
+
+kind: Template
+apiVersion: v1
+metadata:
+  name: lazar
+  annotations:
+    openshift.io/display-name: lazar toxicity prediction service
+    openshift.io/provider-display-name: Johannes Gutenberg University Mainz - JGU, in silico toxicology gmbh - IST
+    openshift.io/documentation-url: https://github.com/OpenRiskNet/home.git
+    openshift.io/support-url: https://github.com/OpenRiskNet/home/issues
+    description: lazar (lazy structure–activity relationships) is a modular framework for predictive toxicology.
+      Similar to the read across procedure in toxicological risk assessment, lazar creates local
+      QSAR (quantitative structure–activity relationship) models for each compound to be predicted.
+    iconClass: 'fa fa-cogs'
+    tags: lazar,prediction,rest
+labels:
+  template: lazar
+  app: lazar
+message:
+  lazar has been deployed to your project.
+  To remove the deployment you can use the command-line
+  and run "oc delete all --selector template=lazar" for the
+  project you deployed to.
+
+parameters:
+
+  - name: IMAGE_TAG
+    description:
+      The lazar docker image tag
+    value: latest
+  - name: ROUTE_NAME
+    description:
+      The name of the service endpoint.
+      This is typically *lazar* but if you want different instances
+      you can pass another name like *mylazar*.
+    value: lazar
+  - name: ROUTES_BASENAME
+    description:
+      The base name of the service endpoint.
+      This is typically the PROD or DEV URL basename.
+    value: prod.openrisknet.org
+  - name: LAZAR_SERVICE_PORT
+    description:
+      The port for the lazar service inside your project
+    value: "8088"
+  - name: TLS
+    description:
+      If you want TLS certificate
+    value: "false"
+  - name: CPU_LIMIT
+    description:
+      Set CPU limit
+    value: "4000m"
+  - name: CPU_REQUEST
+    description:
+      Set CPU request
+    value: "2000m"
+  - name: MEMORY_LIMIT
+    description:
+      Set RAM limit
+    value: "8Gi"
+  - name: MEMORY_REQUEST
+    description:
+      Set RAM request
+    value: "4Gi"
+
+objects:
+
+- kind: ImageStream
+  apiVersion: v1
+  metadata:
+    name: lazar-rest
+  spec:
+    dockerImageRepository: docker.io/gebele/lazar-rest
+    lookupPolicy:
+      local: false
+    tags:
+      - annotations:
+          openshift.io/display-name: lazar
+        from:
+          kind: DockerImage
+          name: docker.io/gebele/lazar-rest:${IMAGE_TAG}
+        importPolicy:
+          scheduled: true
+        name: latest
+        referencePolicy:
+          type: Source
+  status:
+    dockerImageRepository: docker.io/gebele/lazar-rest
+
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    name: lazar
+  spec:
+    strategy:
+      rollingUpdate:
+        maxUnavailable: 0
+    triggers:
+      - type: ConfigChange
+      - imageChangeParams:
+          automatic: true
+          containerNames:
+            - lazar
+          from:
+            kind: ImageStreamTag
+            name: lazar-rest:${IMAGE_TAG}
+        type: ImageChange
+    replicas: 1
+    selector:
+      name: lazar
+    template:
+      metadata:
+        labels:
+          name: lazar
+      spec:
+        containers:
+        - name: lazar
+          image: docker.io/gebele/lazar-rest:${IMAGE_TAG}
+          ports:
+          - containerPort: 8088
+            protocol: TCP
+          terminationMessagePath: "/dev/termination-log"
+          imagePullPolicy: Always
+          securityContext:
+            capabilities: {}
+            privileged: false
+          readinessProbe:
+            httpGet:
+              path: "/"
+              port: 8088
+              scheme: "HTTP"
+            failureTreshold: 20
+            initialDelaySeconds: 90
+            periodSeconds: 30
+            timeoutSeconds: 4
+          livenessProbe:
+            exec:
+              command:
+                - ls
+                - /home/ist
+            failureTreshold: 10
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 4
+          resources:
+            requests:
+              cpu: ${CPU_REQUEST}
+              memory: ${MEMORY_REQUEST}
+            limits:
+              cpu: ${CPU_LIMIT}
+              memory: ${MEMORY_LIMIT}
+        restartPolicy: Always
+        dnsPolicy: ClusterFirst
+  status: {}
+
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: lazar
+    namespace: lazar
+    annotations:
+      openrisknet-static-services: https://${ROUTE_NAME}.${ROUTES_BASENAME}/api/api.json
+  spec:
+    ports:
+    - name: lazar
+      protocol: TCP
+      port: ${{LAZAR_SERVICE_PORT}}
+      targetPort: 8088
+      nodePort: 0
+    selector:
+      name: lazar
+    type: ClusterIP
+    sessionAffinity: None
+  status:
+    loadBalancer: {}
+
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: ${ROUTE_NAME}
+    annotations:
+      kubernetes.io/tls-acme: ${TLS}
+  spec:
+    host: ${ROUTE_NAME}.${ROUTES_BASENAME}
+    to:
+      kind: Service
+      name: lazar
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+  status: {}
