@@ -33,38 +33,62 @@ replicated in this exercise directory. It consists of the following objects: -
 -   A **Service**
 -   A **Route**
 
->   In its simplest form an **ImageStream** is a Docker image identified by a
-    tag (it's actually much more than that but we don't have time to go into the
-    detail of each object).
+In its simplest form an **ImageStream** is a Docker image identified by a
+tag (it's actually much more than that but we don't have time to go into the
+detail of each object). Lazar uses it as a 'trigger' for the container image
+so the **Pod** automatically re-deploys when the image changes.
 
->   You can more about ImageStreams in the [image streams section] of
+>   You can read more about ImageStreams in the [image streams section] of
     the OpenShift documentation.
 
->   It's often more flexible to restrict OpenShift templates to a
-    one-file-one-object scheme. This is not always possible, especially
-    where parameters need to be shared. If anything that's a reason to
-    move to playbooks or roles and employ the Ansible **k8s** module. 
+Incidentally, it's often more flexible to restrict OpenShift templates to a
+*one-file-one-object* scheme. This is not always possible, especially
+where parameters need to be shared between closely related objects.
+But it is a reason to consider the use of playbooks or roles that employ
+the Ansible **k8s** module.
 
-You can find the latest **Lazar** template and documentation on its
-[deployments page] on the OpenRiskNet site.
+>   The template we're using has been adjusted for the workshop.
+    The latest production template and documentation can be found on the
+    OpenRiskNet site's [deployments page].
 
 ### Parameters
-
 **Lazar** is controlled through the use of a number of **Parameters**,
 defined in its OpenShift template so we need to understand how we can *override*
 template parameters from the command-line before we can install it as its
 default parameter values may not be appropriate for our use.
+If you inspect the `lazar.yaml` template you'll see default values for
+parameters like the `IMAGE_NAME` and `ROUTE_NAME`.
 
-If you inspect the `lazar.yaml` template you'll see a number of parameters
-and their default values for parameters like the `IMAGE_NAME` and `ROUTE_NAME`.
+You can change parameter values on the command-line via the `process` command's
+`-p` option. We'll see that when we put all this together in the next section.
 
-You can change parameter values on the command-line via the `process` command.
-
-### Pod permissions
 
 ### Putting it all together
 
+>   Because several users may be running this Exercise at the same time
+    we *must* change one parameter, the `ROUTE_NAME`. We can't all deploy **Lazar**
+    and use the same **Route** name. We can do this simply by using our username.
+
     oc process -f lazar.yaml -p ROUTE_NAME=user1-exercisec | oc create -f -
+
+Lazar is a large and complex application, that may take a few moments to
+become 'ready'. You can visit the project **Overview** page to see the
+deployment state of the application. At some point it should settle down
+and you should see the **Pod** with its familiar blue outline, the **Service**
+and **Route**: -
+
+![](screen-1.png)
+
+When 'ready' you should be able to navigate to the application's landing page
+using the **Route** link: -
+
+![](screen-2.png)
+
+>   The **Lazar** **Route** expects secure traffic via the HTTPS protocol.
+    Insecure traffic is redirected. Consequently you may be warned about this
+    by your browser. For now you should acknowledge the security warning and
+    proceed to the application website. Feel free to inspect the template to
+    see these object properties.
 
 ## Delete the project
 Clean up by deleting the project.
