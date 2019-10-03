@@ -38,7 +38,7 @@ to the variable `pvc_result`: -
 -   More than 2,800 built-in modules from package management using `apk`
     to `zfs` for managing zfs file systems
 -   Simple and richer Kubernetes object management via the built-in `k8s` module
--   Richer dynamic control of objects (Ansible variables and advanced templating mechanism)
+-   Richer dynamic control of objects (Ansible variables and [jinja2] templating mechanism)
 
 ## Examples
 
@@ -72,7 +72,7 @@ that include: -
     ([squonk-infra-keycloak-init.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/files/squonk-infra-keycloak-init.yaml))
 -   **CronJob** object templates for regular database backups
     ([postgres.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres.yaml)) 
--   **DeploymentConfig** and **Service** for PostgreSQL !
+-   **DeploymentConfig** and **Service** for PostgreSQL
     ([postgres-backup-hourly.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres-backup-hourly.yaml))
 -   **Secrets**
     ([postgres-secrets.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres-secrets.yaml))
@@ -80,12 +80,22 @@ that include: -
     ([squonk-pv-nfs.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/files/squonk-pv-nfs.yaml))
     ([squonk-pvc-nfs.yaml](https://github.com/InformaticsMatters/squonk/blob/master/openshift/ansible/roles/squonk/files/squonk-pvc-nfs.yaml))
 
-And Ansible Role playbooks that include orchestrating:
+Some Ansible **k8s module** templates that include: -
+
+-   **DeploymentConfig** ([cellexecutor-deployment.yaml.j2](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/templates/cellexecutor-deployment.yaml.j2]())
+-   **Service** ([cellexecutor-service.yaml.j2](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/templates/cellexecutor-service.yaml.j2))
+-   **ImageStream** ([cellexecutor-imagestream.yaml.j2](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/templates/cellexecutor-imagestream.yaml.j2))
+
+And Ansible Role **playbooks** that include orchestrating: -
 
 -   Database users
     ([create-user-db.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/tasks/create-user-db.yaml))
+-   Extraction of Keycloak authentication tokens
+    ([get-keycloak-token.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/tasks/get-keycloak-token.yaml))
 -   Service accounts
     ([create-service-account.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/tasks/create-service-account.yaml))
+-   Ansible k8s module templates
+    ([squonk-app.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/tasks/squonk-app.yaml))
 
 # Ansible roles (and Ansible Galaxy)
 
