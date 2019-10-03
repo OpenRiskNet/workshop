@@ -194,6 +194,16 @@ and deploys the PySimple *role* into Kubernetes or OpenShift.
 A description of the operator and example use can be found in the
 project's GitHub documentation.
 
+# Further information
+
+We have plenty more information in the [openrisknet/home](https://github.com/OpenRiskNet/home) GitHub repository.
+In particular you might want to take a look at:
+
+* [Recipes](https://github.com/OpenRiskNet/home/tree/master/openshift/recipes) - quick 'howto' guides for a wide range 
+of OpenShift related tasks.
+* [Deployments](https://github.com/OpenRiskNet/home/tree/master/openshift/deployments) - complete deployment instructions
+for the OpenRiskNet partner applications and related applications. 
+
 ---
 
 [toc](../README.md) | [prev](../tutorial-5/README.md)
