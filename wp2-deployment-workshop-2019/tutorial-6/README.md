@@ -57,25 +57,35 @@ authentication service a number of playbooks and object templates have been
 developed, resulting in simple one-click installation of the application
 and its orchestration formed from: -
 
--   26 Ansible *playbooks*
--   6 Ansible *roles*
--   90+ Role playbook files
--   50+ Kubernetes/OpenShift YAML template files
--   100+ variables
+-   **26** Ansible *playbooks*
+-   **6** Ansible *roles*
+-   **90+** Role playbook files
+-   **50+** Kubernetes/OpenShift YAML template files
+-   **100+** variables
 
 The open-source repository contains some interesting **OpenShift templates**
 that include: -
 
--   **ConfigMap** and **Job** object templates for database user-creation !
--   **ConfigMap** and **Job** object templates for Keycloak configuration ! 
--   **CronJob** object templates for regular database backups !
+-   **ConfigMap** and **Job** object templates for database user-creation
+    ([infra-db-create.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/infra-db-create.yaml))
+-   **ConfigMap** and **Job** object templates for Keycloak configuration
+    ([squonk-infra-keycloak-init.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/files/squonk-infra-keycloak-init.yaml))
+-   **CronJob** object templates for regular database backups
+    ([postgres.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres.yaml)) 
 -   **DeploymentConfig** and **Service** for PostgreSQL !
--   **Secrets** !
--   **PersistentVolume** and corresponding **PersistentVolumeClaim** object templates (NFS) !
+    ([postgres-backup-hourly.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres-backup-hourly.yaml))
+-   **Secrets**
+    ([postgres-secrets.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/files/postgres-secrets.yaml))
+-   **PersistentVolume** and corresponding **PersistentVolumeClaim** object templates (NFS)
+    ([squonk-pv-nfs.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/squonk/files/squonk-pv-nfs.yaml))
+    ([squonk-pvc-nfs.yaml](https://github.com/InformaticsMatters/squonk/blob/master/openshift/ansible/roles/squonk/files/squonk-pvc-nfs.yaml))
 
-And Role playbooks that include:
+And Ansible Role playbooks that include orchestrating:
 
--   **TDB**
+-   Database users
+    ([create-user-db.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/tasks/create-user-db.yaml))
+-   Service accounts
+    ([create-service-account.yaml](https://raw.githubusercontent.com/InformaticsMatters/squonk/master/openshift/ansible/roles/infra/tasks/create-service-account.yaml))
 
 # Ansible roles (and Ansible Galaxy)
 
