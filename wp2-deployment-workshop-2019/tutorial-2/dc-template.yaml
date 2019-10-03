@@ -1,0 +1,34 @@
+---
+kind: Template
+apiVersion: v1
+metadata:
+  name: pysimple
+labels:
+  template: pysimple
+
+parameters:
+  - name: NAME
+    value: pysimple
+  - name: IMAGE
+    value: alanbchristie/pysimple:2019.4
+
+objects:
+  - kind: DeploymentConfig
+    apiVersion: v1
+    metadata:
+      name: ${NAME}
+    spec:
+      replicas: 1
+      selector:
+        name: ${NAME}
+      template:
+        metadata:
+          labels:
+            name: ${NAME}
+        spec:
+          containers:
+            - image: ${IMAGE}
+              name: ${NAME}
+              ports:
+                - containerPort: 8080
+                  protocol: TCP

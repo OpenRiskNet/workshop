@@ -1,0 +1,19 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: pysimple
+spec:
+  replicas: 1
+  selector:
+    name: pysimple
+  template:
+    metadata:
+      labels:
+        name: pysimple
+    spec:
+      containers:
+        - image: alanbchristie/pysimple:2019.4
+          name: pysimple
+          ports:
+            - containerPort: 8080
+              protocol: TCP
