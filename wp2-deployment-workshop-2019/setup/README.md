@@ -103,7 +103,7 @@ that the `oc` binary is on your PATH.
 Go to [the console] and enter the username and password your claimed earlier.
 Once logged in you will see a page like this:
 
-[screenshot]
+![](screen-login.png)
 
 ### Using the oc CLI
 The Exercises provide command-line examples that, to simplify their execution,
