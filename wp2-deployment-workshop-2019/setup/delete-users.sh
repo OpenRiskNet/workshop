@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Deletes 'N' users (user1..userN).
 #
 # Usage: sudo ./delete-users.sh <N>

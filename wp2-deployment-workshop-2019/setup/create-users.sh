@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Creates 'N' htpassed users (user1..userN) with associated passwords.
 # Results written to local file 'users.txt' and 'htpasswd'.
 #
@@ -37,5 +39,10 @@ do
   # Done
   echo "Created user $username"
 done
+
+# Get OC (into /bin)
+wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar -xvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+sudo cp openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /bin
 
 echo "Look at users.txt and htpasswd"

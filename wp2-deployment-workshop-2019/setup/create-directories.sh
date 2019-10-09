@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # You must be logged into the OpenShift command-line as the 'admin' user.
 # Run on the NFS server to create 'N' NFS directories, the exports
 # and persistent volumes.

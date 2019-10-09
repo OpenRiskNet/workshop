@@ -41,20 +41,6 @@ you have successfully claimed that username.
 That username and password will be used for your login to OpenShift
 and your login to the shared server.
 
-## Logging into the workshop VM
-
-Having chosen a user, login to the VM at `cloudv197.zdv.uni-mainz.de`.
-For example, `user1` can login with the command: -
-
-    ssh user1@cloudv197.zdv.uni-mainz.de
-    (enter your password when prompted)
-    
-You'll be in the user's home directory (i.e. `/home/user1`) where you'll
-find the workshop material. Move top the workshop directory, where you'll
-find directories for the exercises and tutorials: -
-
-    cd workshop/wp2-deployment-workshop-2019
-
 ## Naming etiquette
 
 When it comes to creating OpenShift projects please conform to a convention
@@ -82,10 +68,18 @@ Windows 10 machines will have that pre-installed. For older Windows machines
 you might want to download and install 
 [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
-To login do something like this:
+To login with your selected user use ssh: -
 
-    ssh <user>@<server>
+    ssh <user>@cloudv197.zdv.uni-mainz.de
     password: ********
+
+You'll be in the user's home directory (i.e. `/home/<user>>`) where you'll
+find the workshop material, with the oc command available.
+
+Move to the workshop directory, where you'll
+find the exercises and tutorials: -
+
+    cd ~/workshop/wp2-deployment-workshop-2019
     
 ### Installing oc on your computer
 
@@ -106,24 +100,24 @@ that the `oc` binary is on your PATH.
 
 ### Using a web browser
 
-Go to [url goes here] and enter the username and password your claimed earlier.
+Go to [the console] and enter the username and password your claimed earlier.
 Once logged in you will see a page like this:
 
 [screenshot]
 
 ### Using the oc CLI
 The Exercises provide command-line examples that, to simplify their execution,
-rely in the existence of the `WORKSHOP_USER` environment variable. Now that you
-you have selected your username from the spreadsheet, set the environment
-variable in your shell so you can cut-and-paste from the examples, replacing
-`user1` with your chosen username: -
+rely in the existence of the `WORKSHOP_USER` environment variable. If you;'ve
+logged into the workshop VM this will have been set for you automatically.
 
-    export WORKSHOP_USER=user1
+>   If you are not using the workshop VM you will need to set the environment
+    variable in your shell so you can cut-and-paste from the examples, replacing
+    `user1` with your chosen username, i.e. `export WORKSHOP_USER=user1`
 
 The `oc` command is used to execute all of the OpenShift commands we'll be using.
 But first, you need to use `oc` to connect to the chosen server: -
 
-    oc login -u ${WORKSHOP_USER} https://server 
+    oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
 
 You can always run `oc` to get some basic help: -
     
@@ -140,30 +134,31 @@ And any other commands that are available: -
 ## Minishift
 
 In the workshop you will be using a test OpenShift environment running externally.
-This environment will not be available after the workshop. If you wish to continue with these
-exercises after the workshop then you might want to consider running `Minishift` which is a mini
-OpenShift environment that can be run on your laptop. Once started Minishift provides a fully
-functional local OpenShift environment that can be used for development.
+This environment will not be available after the workshop. If you wish to
+continue with these exercises after the workshop then you might want to
+consider running `Minishift` which is a mini OpenShift environment that can be
+run on your laptop. Once started Minishift provides a fully functional local
+OpenShift environment that can be used for development.
 
 See [these instructions](https://docs.okd.io/latest/minishift/getting-started/installing.html)
 for installing and running Minishift.
 
 ## GitHub repo
 
-The workshop exercises use files from the GitHub repo that contains this workshop material. You need to have a clone
-of the repo to get access to the files.
+The workshop exercises use files from the GitHub repo that contains
+this workshop material. You need to have a clone of the repo to get access
+to the files.
 
 **If using the provided VM (Option 1)**
 
-The cloned repo is already present in VM. You will find it at `/git/workshop`.
-
-You have `read-only` access to the files so cannot make changes. If you want to edit the files then choose one of the 
-methods described next to get a copy in your user space.
+The cloned repo is already present in VM and in your home directory
+at `~/workshop`.
 
 **If using your own laptop/server (Option 2)**
 
-First install the Git version control software on your computer if not already present. See
-[here](https://git-scm.com/downloads) for a version for your computer.
+First install the Git version control software on your computer if not already
+present. See [here](https://git-scm.com/downloads) for a version for your
+computer.
 
 Now clone the repo:
 
@@ -175,13 +170,15 @@ Once downloaded unzip the contents to somewhere on your computer.
 
 **Repository layout**
 
-Whichever mechanism you use to access the GitHub repo you need to start from the `wp2-deployment-workshop-2019` directory
-in the repo. e.g.
+Whichever mechanism you use to access the GitHub repo you need to start from
+the `wp2-deployment-workshop-2019` directory in the repo: -
 
-    cd /git/workshop/wp2-deployment-workshop-2019
+    cd ~/workshop/wp2-deployment-workshop-2019
 
 In there you will find directories for each of the exercises and tutorials.
 
 ---
 
 [toc](../README.md) | [next](../tutorial-1/README.md)
+
+[the console]: https://orn-master.informaticsmatters.com
