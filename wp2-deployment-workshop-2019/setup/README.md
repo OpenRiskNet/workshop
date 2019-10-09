@@ -19,12 +19,14 @@ You can perform the exercises in two ways:
 
 **Option 1: login to a VM that we provide that provides all the pre-requisites**
 
-This is the preferred approach. You need to grab yourself a username and then ssh to the server as described below.
+This is the preferred approach. You need to grab yourself a username and then
+`ssh` to the server as described below.
 
 **Option 2: use your own laptop/server**
 
-Choose this option if you prefer, but our ability to assist if things go wrong may be limited.
-As well as grabbing yourself a username you will need to install the `oc` client and clone the GitHub repository as 
+Choose this option if you prefer, but our ability to assist if things go wrong
+may be limited. As well as grabbing yourself a username you will need to
+install the `oc` client and clone the GitHub repository as 
 described below.
 
 ## User account
@@ -38,6 +40,20 @@ you have successfully claimed that username.
 
 That username and password will be used for your login to OpenShift
 and your login to the shared server.
+
+## Logging into the workshop VM
+
+Having chosen a user, login to the VM at `cloudv197.zdv.uni-mainz.de`.
+For example, `user1` can login with the command: -
+
+    ssh user1@cloudv197.zdv.uni-mainz.de
+    (enter your password when prompted)
+    
+You'll be in the user's home directory (i.e. `/home/user1`) where you'll
+find the workshop material. Move top the workshop directory, where you'll
+find directories for the exercises and tutorials: -
+
+    cd workshop/wp2-deployment-workshop-2019
 
 ## Naming etiquette
 

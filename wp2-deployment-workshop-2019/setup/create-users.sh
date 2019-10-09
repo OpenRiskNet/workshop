@@ -4,6 +4,13 @@
 # Results written to local file 'users.txt' and 'htpasswd'.
 #
 # Usage: sudo ./create-users.sh <N>
+#
+# Note:   Remember to set `PasswordAuthentication yes`
+# ----    in the `/etc/ssh/sshd_config` file
+#         and restart the sshd service with `sudo service sshd restart`.
+#
+#         When the workshop is over you should also remove the users,
+#         reset the variable to `PasswordAuthentication no` and restart sshd.
 
 if [ $# != 1 ]
 then
@@ -23,6 +30,11 @@ do
   sudo useradd -m -s /bin/bash "$username"
   echo "$password" | sudo passwd "$username" --stdin > /dev/null
   sudo htpasswd -b htpasswd "$username" "$password" &> /dev/null
+  # Clone the workshop material...
+  sudo git clone https://github.com/OpenRiskNet/workshop.git /home/${username}/workshop > /dev/null 2> /dev/null
+  # Set the WORKSHOP_USER env variable...
+  echo "export WORKSHOP_USER=${username}" | sudo tee -a /home/${username}/.bash_profile > /dev/null
+  # Done
   echo "Created user $username"
 done
 
