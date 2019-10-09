@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Creates 'N' htpassed users (user1..userN) with asscoiated passwords.
+# Creates 'N' htpassed users (user1..userN) with associated passwords.
 # Results written to local file 'users.txt' and 'htpasswd'.
 #
 # Usage: sudo ./create-users.sh <N>
