@@ -15,12 +15,12 @@ from the OpenShift Command-Line.
 
 Change directory to where the files for the exercise are located:
 
-    cd /git/workshop/wp2-deployment-workshop-2019/exercise-c
+    cd ~/workshop/wp2-deployment-workshop-2019/exercise-c
 
 ## Login
 If you need to, login to the server: -
 
-    oc login -u ${WORKSHOP_USER} https://dev.openrisknet.org:8443
+    oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
     ...
 
 ## Creating a namespace (project)

@@ -18,13 +18,13 @@ restarts.
 
 Change directory to where the files for the exercise are located:
 
-    cd /git/workshop/wp2-deployment-workshop-2019/exercise-d
+    cd ~/workshop/wp2-deployment-workshop-2019/exercise-d
 
 ## Login and create a project
 Login to the server by copying the example login command you were given on the
 **Command Line Tools** page, which will be something like this: -
 
-    oc login https://dev.openrisknet.org:8443
+    oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
     ...
     oc new-project ${WORKSHOP_USER}-exercised
 
@@ -97,9 +97,9 @@ disk-based database) are remounted into the new container.
 
 First, let's check the current application's response with curl: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exercised.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exercised.orn.informaticsmatters.com/
 
-You should get a value for `Num visits` that is `1`.
+You should see `Num visits: 1`.
 
 Lets's delete, wait and then re-create the application...
 
@@ -108,9 +108,10 @@ Lets's delete, wait and then re-create the application...
     oc process -f deployment-config.yaml | oc create -f -
 
 With the application restored, if we `curl` the application's **Route** now,
-we'll see that the `Num visits` is now `2`: -
+we'll see that the number of visits has been preserved,
+i.e. you should see `Num visits: 2`: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exercised.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exercised.orn.informaticsmatters.com/
 
 The application was removed and re-deployed and its disk-based data was
 persisted.

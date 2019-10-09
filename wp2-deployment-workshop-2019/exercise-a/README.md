@@ -20,7 +20,7 @@ that we'll use in several places in this workshop.
 ## Log into the server
 Using a web browser (ideally Google Chrome) navigate to the OpenRiskNet
 OpenShift Development Web Console at
-[https://dev.openrisknet.org:8443/](https://dev.openrisknet.org:8443/)
+[https://orn-master.informaticsmatters.com](https://orn-master.informaticsmatters.com)
 where you'll be presented with the login page and enter the **username**
 and **password** you've chosen.
 

@@ -17,12 +17,12 @@ In this exercise we deploy the **PySimple** image from the OpenShift Command-Lin
 
 Change directory to where the files for the exercise are located:
 
-    cd /git/workshop/wp2-deployment-workshop-2019/exercise-b
+    cd ~/workshop/wp2-deployment-workshop-2019/exercise-b
 
 ## Login
 Login to the server: -
 
-    oc login -u ${WORKSHOP_USER} https://dev.openrisknet.org:8443
+    oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
     ...
 
 ## Creating a namespace (project)
