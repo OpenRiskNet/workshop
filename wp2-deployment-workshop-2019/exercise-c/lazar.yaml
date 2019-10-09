@@ -39,7 +39,7 @@ parameters:
     description:
       The base name of the service endpoint.
       This is typically the PROD or DEV URL basename.
-    value: dev.openrisknet.org
+    value: orn.informaticsmatters.com
   - name: LAZAR_SERVICE_PORT
     description:
       The port for the lazar service inside your project

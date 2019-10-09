@@ -105,7 +105,7 @@ and, once the container is pulled from DockerHub and is running the
 Click on the route's link to visit the application, or you can use
 `curl` from the command-line: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exerciseb.dev.openrisknet.org/
+    curl http://pysimple-${WORKSHOP_USER}-exerciseb.orn.informaticsmatters.com/
 
 ## Scaling the application
 With the application running we can scale it up and down by
