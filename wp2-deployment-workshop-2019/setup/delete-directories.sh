@@ -14,24 +14,24 @@ then
 fi
 
 oc_user=$(oc whoami)
-if [ ${oc_user} != 'admin' ]
+if [ "${oc_user}" != 'admin' ]
 then
   echo "You must be the 'admin' oc user"
   exit 1
 fi
 
-for i in $(seq 1 $1)
+for i in $(seq 1 "$1")
 do
   user=user${i}
-  oc delete pv/pv-${user} > /dev/null
+  oc delete pv/pv-"${user}" > /dev/null
 done
 
 sudo rm /etc/exports.d/workshop.exports
 sudo systemctl restart nfs-server
 
-for i in $(seq 1 $1)
+for i in $(seq 1 "$1")
 do
   user=user${i}
   dir=/exports/${user}-dir
-  sudo rm -rf ${dir}
+  sudo rm -rf "${dir}"
 done

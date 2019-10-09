@@ -26,7 +26,7 @@ do
   dir=/exports/${user}-dir
   sudo mkdir -p ${dir}
   sudo chmod -R 777 ${dir}
-  sudo chown -R nfsnobody.nfsnobody ${dir}
+  sudo chown -R nfsnobody.nfsnobody "${dir}"
   sudo echo "${dir} *(rw,root_squash)" | sudo tee -a /etc/exports.d/workshop.exports > /dev/null
   sed "s/%USER%/${user}/" pv-template.yaml > pv.yaml
   oc create -f pv.yaml > /dev/null

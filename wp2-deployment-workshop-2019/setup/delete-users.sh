@@ -11,9 +11,9 @@ then
   exit 1
 fi
 
-for i in $(seq 1 $1)
+for i in $(seq 1 "$1")
 do
   username=user$i
-  sudo userdel -r $username
+  sudo userdel -r "$username"
   echo "Deleted user $username"
 done
