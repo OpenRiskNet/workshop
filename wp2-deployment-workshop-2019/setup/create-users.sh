@@ -60,4 +60,5 @@ wget https://github.com/openshift/origin/releases/download/v3.11.0/openshift-ori
 tar -xvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz > /dev/null 2>&1
 sudo cp openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /bin
 
+echo "Done"
 echo "Look at users.txt and htpasswd"
