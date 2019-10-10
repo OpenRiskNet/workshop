@@ -28,7 +28,7 @@ parameters:
 - name: IMAGE_TAG
   description:
     The lazar docker image tag
-  value: latest
+  value: exercise-c
 - name: ROUTE_NAME
   description:
     The name of the service endpoint.
