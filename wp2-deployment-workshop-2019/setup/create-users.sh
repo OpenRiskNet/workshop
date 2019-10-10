@@ -33,9 +33,10 @@ do
   echo "$password" | sudo passwd "$username" --stdin > /dev/null
   sudo htpasswd -b htpasswd "$username" "$password" &> /dev/null
   # Clone the workshop material...
-  sudo git clone https://github.com/OpenRiskNet/workshop.git /home/${username}/workshop > /dev/null 2> /dev/null
+  sudo git clone https://github.com/OpenRiskNet/workshop.git /home/"${username}"/workshop > /dev/null 2> /dev/null
+  sudo chown -R "${username}"."${username}" /home/"${username}"/workshop
   # Set the WORKSHOP_USER env variable...
-  echo "export WORKSHOP_USER=${username}" | sudo tee -a /home/${username}/.bash_profile > /dev/null
+  echo "export WORKSHOP_USER=${username}" | sudo tee -a /home/"${username}"/.bash_profile > /dev/null
   # Done
   echo "Created user $username"
 done
