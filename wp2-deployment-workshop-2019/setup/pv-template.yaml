@@ -1,18 +1,18 @@
 ---
 
 # Template for the user's PV.
-# Replace %USER% with the user ID.
+# Replace %DIR% with the export directory.
 
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-%USER%
+  name: pv-%DIR%
 spec:
   capacity:
     storage: 1Gi
   accessModes:
   - ReadWriteOnce
   nfs:
-    path: /exports/%USER%-dir
+    path: /exports/%DIR%
     server: cloudv199.zdv.uni-mainz.de
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Recycle

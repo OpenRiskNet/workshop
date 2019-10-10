@@ -22,15 +22,14 @@ then
   exit 1
 fi
 
-for i in $(seq 1 $1)
+for i in $(seq 1 "$1")
 do
-  user=user${i}
-  dir=/exports/${user}-dir
-  sudo mkdir -p ${dir}
-  sudo chmod -R 777 ${dir}
-  sudo chown -R nfsnobody.nfsnobody "${dir}"
-  sudo echo "${dir} *(rw,root_squash)" | sudo tee -a /etc/exports.d/workshop.exports > /dev/null
-  sed "s/%USER%/${user}/" pv-template.yaml > pv.yaml
+  dir=workshop-dir-${i}
+  sudo mkdir -p "/exports/${dir}"
+  sudo chmod -R 777 "/exports/${dir}"
+  sudo chown -R nfsnobody.nfsnobody "/exports/${dir}"
+  sudo echo "/exports/${dir} *(rw,root_squash)" | sudo tee -a /etc/exports.d/workshop.exports > /dev/null
+  sed "s/%DIR%/${dir}/" pv-template.yaml > pv.yaml
   oc create -f pv.yaml > /dev/null
 done
 
