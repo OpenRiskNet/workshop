@@ -160,9 +160,6 @@ Let's see what happens if your container (**Pod**) dies.
 >   It will more dramatic if you have the console's application **Overview**
     screen visible while you run the next few commands.
 
->   If you've previously scaled the pod to 2 replicas, return it to 1 with
-    `oc scale dc/pysimple --replicas=1`
- 
 First list your pods (if you scaled to 2 replicas above you should see 2 pods):
 
     oc get pod
@@ -188,7 +185,7 @@ OpenShift creates a new running instance of your container image and
 might possibly even use a different physical compute instance on which to
 run it (if the node had actually crashed it would definitely do so).
 
-During all this, With more than one `replica`, there was no disruption to your
+During all this, with more than one `replica`, there was no disruption to your
 service as the other pod was still running.
 
 ## Delete the project
