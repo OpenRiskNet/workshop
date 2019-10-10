@@ -25,45 +25,45 @@ message:
 
 parameters:
 
-  - name: IMAGE_TAG
-    description:
-      The lazar docker image tag
-    value: latest
-  - name: ROUTE_NAME
-    description:
-      The name of the service endpoint.
-      This is typically *lazar* but if you want different instances
-      you can pass another name like *mylazar*.
-    value: lazar
-  - name: ROUTES_BASENAME
-    description:
-      The base name of the service endpoint.
-      This is typically the PROD or DEV URL basename.
-    value: orn.informaticsmatters.com
-  - name: LAZAR_SERVICE_PORT
-    description:
-      The port for the lazar service inside your project
-    value: "8088"
-  - name: TLS
-    description:
-      If you want TLS certificate
-    value: "false"
-  - name: CPU_LIMIT
-    description:
-      Set CPU limit
-    value: "4000m"
-  - name: CPU_REQUEST
-    description:
-      Set CPU request
-    value: "2000m"
-  - name: MEMORY_LIMIT
-    description:
-      Set RAM limit
-    value: "8Gi"
-  - name: MEMORY_REQUEST
-    description:
-      Set RAM request
-    value: "4Gi"
+- name: IMAGE_TAG
+  description:
+    The lazar docker image tag
+  value: latest
+- name: ROUTE_NAME
+  description:
+    The name of the service endpoint.
+    This is typically *lazar* but if you want different instances
+    you can pass another name like *mylazar*.
+  value: lazar
+- name: ROUTES_BASENAME
+  description:
+    The base name of the service endpoint.
+    This is typically the PROD or DEV URL basename.
+  value: orn.informaticsmatters.com
+- name: LAZAR_SERVICE_PORT
+  description:
+    The port for the lazar service inside your project
+  value: "8088"
+- name: TLS
+  description:
+    If you want TLS certificate
+  value: "false"
+- name: CPU_LIMIT
+  description:
+    Set CPU limit
+  value: "4000m"
+- name: CPU_REQUEST
+  description:
+    Set CPU request
+  value: "2000m"
+- name: MEMORY_LIMIT
+  description:
+    Set RAM limit
+  value: "8Gi"
+- name: MEMORY_REQUEST
+  description:
+    Set RAM request
+  value: "4Gi"
 
 objects:
 
@@ -76,16 +76,16 @@ objects:
     lookupPolicy:
       local: false
     tags:
-      - annotations:
-          openshift.io/display-name: lazar
-        from:
-          kind: DockerImage
-          name: docker.io/gebele/lazar-rest:${IMAGE_TAG}
-        importPolicy:
-          scheduled: true
-        name: latest
-        referencePolicy:
-          type: Source
+    - annotations:
+        openshift.io/display-name: lazar
+      from:
+        kind: DockerImage
+        name: docker.io/gebele/lazar-rest:${IMAGE_TAG}
+      importPolicy:
+        scheduled: true
+      name: latest
+      referencePolicy:
+        type: Source
   status:
     dockerImageRepository: docker.io/gebele/lazar-rest
 
@@ -98,15 +98,15 @@ objects:
       rollingUpdate:
         maxUnavailable: 0
     triggers:
-      - type: ConfigChange
-      - imageChangeParams:
-          automatic: true
-          containerNames:
-            - lazar
-          from:
-            kind: ImageStreamTag
-            name: lazar-rest:${IMAGE_TAG}
-        type: ImageChange
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - lazar
+        from:
+          kind: ImageStreamTag
+          name: lazar-rest:${IMAGE_TAG}
+      type: ImageChange
     replicas: 1
     selector:
       name: lazar
@@ -124,8 +124,7 @@ objects:
           terminationMessagePath: "/dev/termination-log"
           imagePullPolicy: IfNotPresent
           securityContext:
-            capabilities: {}
-            privileged: false
+            privileged: true
           readinessProbe:
             httpGet:
               path: "/"
@@ -138,8 +137,8 @@ objects:
           livenessProbe:
             exec:
               command:
-                - ls
-                - /home/ist
+              - ls
+              - /home/ist
             failureTreshold: 10
             initialDelaySeconds: 60
             periodSeconds: 30

@@ -13,6 +13,17 @@ set -e
 #
 #         When the workshop is over you should also remove the users,
 #         reset the variable to `PasswordAuthentication no` and restart sshd.
+#
+# Note:   On the OpenShift master you will need to add the `htpasswd`
+# ----    content to `/etc/origin/master/htpasswd`, remembering to remove it
+#         when the workshop is over.
+#
+# Note:   For exercise c you will need to add the default service accounts
+# ----    on the master to the list of `users:` using the command
+#         `oc edit scc privileged`. For each user you will need the
+#         following line, where `<N>` is the user number: -
+#
+#         - system:serviceaccount:user<N>-exercise-c:default
 
 if [ $# != 1 ]
 then

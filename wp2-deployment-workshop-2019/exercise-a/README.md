@@ -37,14 +37,14 @@ Applications are deployed to _namespaces_. Note: we use the terms
 
     Project names may only contain lower-case letters, numbers, and dashes
     and must begin with a letter or number. The name is arbitrary but,
-    according to our workshop convention, let's call it `${WORKSHOP_USER}-exercisea`
+    according to our workshop convention, let's call it `${WORKSHOP_USER}-exercise-a`
     (replace `${WORKSHOP_USER}` with your username).
     
     1.  You can provide an optional **Display Name**, which does not have the
         same content restrictions as the **Name**, and a **Description**
 
 1.  Click **Create** and you should receive a
-    `Project 'user1-exercisea' was successfully created`
+    `Project 'user1-exercise-a' was successfully created`
     notification as your project appears in the **My Projects**
     panel.
 
@@ -149,7 +149,7 @@ Clean up by deleting the project.
     panel on the right.
     
 1.  Click the vertical ellipses (`...`) and select **Delete Project**.
-    1.  Enter you project **Name** (e.g. `${WORKSHOP_USER}-exercisea`)
+    1.  Enter you project **Name** (e.g. `${WORKSHOP_USER}-exercise-a`)
         in the dialogue box and then click the red **Delete** button to
         begin the deletion process.
     1.  The project is _marked for deletion_ and on larger projects deletion

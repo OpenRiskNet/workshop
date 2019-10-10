@@ -28,7 +28,7 @@ Login to the server: -
 ## Creating a namespace (project)
 Use the command-line to create a project: -
 
-    oc new-project ${WORKSHOP_USER}-exerciseb
+    oc new-project ${WORKSHOP_USER}-exercise-b
 
 >   Project names in OpenShift have global scope so we must have unique names,
     hence why we include the username as part of the project name.
@@ -42,7 +42,7 @@ You deploy applications from within a project.
 You are automatically entered into new projects as you create them but you can
 always make sure you're in the right project with the command: -
 
-    oc project ${WORKSHOP_USER}-exerciseb
+    oc project ${WORKSHOP_USER}-exercise-b
 
 You can see which project you're in with the command: -
 
@@ -105,7 +105,7 @@ and, once the container is pulled from DockerHub and is running the
 Click on the route's link to visit the application, or you can use
 `curl` from the command-line: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exerciseb.orn.informaticsmatters.com/
+    curl http://pysimple-${WORKSHOP_USER}-exercise-b.orn.informaticsmatters.com/
 
 ## Scaling the application
 With the application running we can scale it up and down by
@@ -193,16 +193,16 @@ Clean up by deleting the project.
 
 To delete the PySimple project simply run: -
 
-    oc delete project/${WORKSHOP_USER}-exerciseb
+    oc delete project/${WORKSHOP_USER}-exercise-b
     
 As project deletion can take a some time you can always wait for deletion
 with the command: -
 
-    oc wait project/${WORKSHOP_USER}-exerciseb --for=delete
+    oc wait project/${WORKSHOP_USER}-exercise-b --for=delete
 
 Which may conclude with the message: -
 
-    Error from server (NotFound): namespaces "user1-exerciseb" not found
+    Error from server (NotFound): namespaces "user1-exercise-b" not found
 
 ---
 

@@ -49,7 +49,7 @@ and your login to the shared server.
 When it comes to creating OpenShift projects please conform to a convention
 that allows everyone to identify your project. The convention is that the
 project should be named `<username>-<exercise>`. For instance if you are `user7`
-and  are working on `exercise C` then name your project `user7-exercisec`.
+and  are working on `exercise C` then name your project `user7-exercise-c`.
 
 This avoids name clashes and makes it easier for the workshop organisers to
 step in and assist. 

@@ -26,7 +26,7 @@ Login to the server by copying the example login command you were given on the
 
     oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
     ...
-    oc new-project ${WORKSHOP_USER}-exercised
+    oc new-project ${WORKSHOP_USER}-exercise-d
 
 ## Claiming storage
 In order to use an external (persistent) volume we need to make a _claim_.
@@ -97,7 +97,7 @@ disk-based database) are remounted into the new container.
 
 First, let's check the current application's response with curl: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exercised.orn.informaticsmatters.com/
+    curl http://pysimple-${WORKSHOP_USER}-exercise-d.orn.informaticsmatters.com/
 
 You should see `Num visits: 1`.
 
@@ -111,7 +111,7 @@ With the application restored, if we `curl` the application's **Route** now,
 we'll see that the number of visits has been preserved,
 i.e. you should see `Num visits: 2`: -
 
-    curl http://pysimple-${WORKSHOP_USER}-exercised.orn.informaticsmatters.com/
+    curl http://pysimple-${WORKSHOP_USER}-exercise-d.orn.informaticsmatters.com/
 
 The application was removed and re-deployed and its disk-based data was
 persisted.
@@ -122,7 +122,7 @@ Clean up by deleting the project.
 To delete the PySimple project, which also deletes the **PersistentVolumeClaim**
 and (in our case) the underlying storage, simply run: -
 
-    oc delete project/${WORKSHOP_USER}-exercised
+    oc delete project/${WORKSHOP_USER}-exercise-d
 
 ---
 
