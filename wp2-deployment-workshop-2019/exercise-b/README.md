@@ -159,6 +159,9 @@ Let's see what happens if your container (**Pod**) dies.
 
 >   It will more dramatic if you have the console's application **Overview**
     screen visible while you run the next few commands.
+
+>   If you've previously scaled the pod to 2 replicas, return it to 1 with
+    `oc scale dc/pysimple --replicas=1`
  
 First list your pods (if you scaled to 2 replicas above you should see 2 pods):
 
