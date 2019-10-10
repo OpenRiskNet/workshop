@@ -21,8 +21,7 @@ Change directory to where the files for the exercise are located:
     cd ~/workshop/wp2-deployment-workshop-2019/exercise-d
 
 ## Login and create a project
-Login to the server by copying the example login command you were given on the
-**Command Line Tools** page, which will be something like this: -
+If you're already logged in you won't need to provide your password.
 
     oc login -u ${WORKSHOP_USER} https://orn-master.informaticsmatters.com
     ...
