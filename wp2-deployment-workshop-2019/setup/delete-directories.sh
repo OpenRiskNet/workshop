@@ -24,8 +24,8 @@ fi
 
 for i in $(seq 1 "$1")
 do
-  user=user${i}
-  oc delete pv/pv-"${user}" > /dev/null
+  dir=workshop-dir-${i}
+  oc delete pv/pv-"${dir}" > /dev/null
 done
 
 sudo rm /etc/exports.d/workshop.exports
@@ -33,7 +33,6 @@ sudo systemctl restart nfs-server
 
 for i in $(seq 1 "$1")
 do
-  user=user${i}
-  dir=/exports/${user}-dir
-  sudo rm -rf "${dir}"
+  dir=workshop-dir-${i}
+  sudo rm -rf "/exports/${dir}"
 done
