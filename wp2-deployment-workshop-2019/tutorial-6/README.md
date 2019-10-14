@@ -202,7 +202,11 @@ In particular you might want to take a look at:
 * [Recipes](https://github.com/OpenRiskNet/home/tree/master/openshift/recipes) - quick 'howto' guides for a wide range 
 of OpenShift related tasks.
 * [Deployments](https://github.com/OpenRiskNet/home/tree/master/openshift/deployments) - complete deployment instructions
-for the OpenRiskNet partner applications and related applications. 
+for the OpenRiskNet partner applications and related applications.
+* [Deployment guidelines](https://github.com/OpenRiskNet/home/wiki/Deployment-Guidelines) - guidelines and best practices
+for deploying applications.
+* [Authentication](https://github.com/OpenRiskNet/home/wiki/Adding-Authentication) - approaches to adding authentication
+to your applications.
 
 ---
 
