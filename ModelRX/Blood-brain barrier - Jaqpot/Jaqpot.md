@@ -24,3 +24,4 @@ Download the Blood-brain barrier dataset from Lazar, calculate mordred descripto
 8. Evaluation of model performance 
 9. Deploy the model to Jaqpot service (from model to web service in 1 line of code) 
 10. Get a prediction from the newly created model 
+11. Interact with the model on Jaqpot UI
