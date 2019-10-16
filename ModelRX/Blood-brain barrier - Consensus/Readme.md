@@ -2,11 +2,11 @@
 
 Tomaž Mohorič (EwC) and Jonathan Alvarsson (UU)
 
-##### Prerequisites
+### Prerequisites
 
 [Jupyter notebooks](https://github.com/OpenRiskNet/workshop/tree/master/ModelRX/Blood-brain%20barrier%20-%20Consensus) for the consensus predictions. 
 
-##### Outline
+### Outline
 
 - Introduction to Conformal and Cross Venn-Abers Predictors (10 min): demonstration of Service for individual prediction + hands-on with the graphical UI.  
 - Consensus prediction (10 min): 
