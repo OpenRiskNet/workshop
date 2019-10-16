@@ -13,5 +13,5 @@ Denis Gebele (JGU)
 Atif Raza (JGU)
   
 
-### 4. [Integrating multiple predictions](ModelRX/Blood-brain%20barrier%20-%20Consensus/Readme.md)
+### 4. [Integrating multiple predictions](Blood-brain%20barrier%20-%20Consensus/Readme.md)
 Tomaž Mohorič (EwC) and Jonathan Alvarsson (UU)
