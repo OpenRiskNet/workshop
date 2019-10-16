@@ -195,14 +195,9 @@ To delete the PySimple project simply run: -
 
     oc delete project/${WORKSHOP_USER}-exercise-b
     
-As project deletion can take a some time you can always wait for deletion
-with the command: -
-
-    oc wait project/${WORKSHOP_USER}-exercise-b --for=delete
-
-Which may conclude with the message: -
-
-    Error from server (NotFound): namespaces "user1-exercise-b" not found
+Remember that projects can take a some time to
+disappear so, if you wish, you can always check with the console
+to make sure it gets deleted.
 
 ---
 
