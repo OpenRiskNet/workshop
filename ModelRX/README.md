@@ -1,4 +1,4 @@
-# EXERCISES and demonstrations
+## Modelling Exercises and demonstrations
   
 
 ### 1. [Jaqpot predictions](https://github.com/OpenRiskNet/workshop/blob/master/ModelRX/Blood-brain%20barrier%20-%20Jaqpot/Jaqpot.md)
