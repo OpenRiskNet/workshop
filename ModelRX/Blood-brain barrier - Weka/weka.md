@@ -2,11 +2,11 @@
 
 Atif Raza (JGU)
 
-##### Prerequisites
+### Prerequisites
 
 Basic Docker usage (pull and run images). Download the [jguweka/chem_descriptor_miner](https://hub.docker.com/r/jguweka/chem_descriptor_miner) image from Docker hub. Submission of REST queries using Postman or a similar tool or using the web interface of [JGU Weka REST API](https://jguweka.prod.openrisknet.org/) for model creation/evaluation.
 
-##### Outline
+### Outline
 
 The JGU Weka REST API exposes machine learning algorithms from the Weka framework for creating such models based on user-provided data. A feature-based version of a given dataset will be created which can then be used for creating a model using some exposed algorithms.
 
