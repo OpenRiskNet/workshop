@@ -9,7 +9,7 @@ Philip Doganis and Pantelis Karatzas (NTUA)
 Denis Gebele (JGU)
 
 
-### 3. [Create WEKA Models](ModelRX/Blood-brain%20barrier%20-%20Weka/weka.md)
+### 3. [Create WEKA Models](https://github.com/OpenRiskNet/workshop/blob/master/ModelRX/Blood-brain%20barrier%20-%20Weka/weka.md)
 Atif Raza (JGU)
   
 
