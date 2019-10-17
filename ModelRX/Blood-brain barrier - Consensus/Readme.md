@@ -9,6 +9,7 @@ Tomaž Mohorič (EwC) and Jonathan Alvarsson (UU)
 ### Outline
 
 - Introduction to Conformal and Cross Venn-Abers Predictors (10 min): demonstration of Service for individual prediction + hands-on with the graphical UI.  
+    - Hands-on trying on: http://blood-brain-barrier-penetration-cpsign.prod.openrisknet.org/draw/
 - Consensus prediction (10 min): 
     - Intro to Dempster-Shafer theory 
     - Application of DST for the blood-brain barrier prediction: comparison of individual predictive models (Jaqpot, JGU Weka, Lazar, CPSign) and the consensus using ROC and AUC. 
