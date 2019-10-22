@@ -1,4 +1,4 @@
-# Looking up JRCNM01101a in Scholia
+# Excersize 3: Looking up JRCNM01101a in Scholia
 
 [prev](browsing.md) | [toc](./README.md) | [next](extending.md)
 
