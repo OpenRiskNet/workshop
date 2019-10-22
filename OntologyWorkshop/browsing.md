@@ -1,6 +1,6 @@
-# Browsing (with) the eNanoMapper ontology
+# Browsing the eNanoMapper ontology
 
-[prev](intro.md) | [toc](./README.md) | [next](scholia.md)
+[prev](intro.md) | [toc](./README.md) | [next](browsing2.md)
 
 <script>
   function toggleAnswer(id) {
@@ -32,23 +32,8 @@ JRC representative industrial nanomaterials (see [[0](https://doi.org/10.1016/J.
 1. What is the ontology term IRI for JRCNM01000a? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">http://purl.enanomapper.org/onto/ENM_9000074</span>
 2. What is the ontology super class of this term? And the IRI of that?<button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">titanium oxide nanoparticle, http://purl.bioontology.org/ontology/npo#NPO_1486</span>
 
-## Excersize 2: Browsing nanosafety data with the eNanoMapper data platform
-
-One reason why identifiers are central to FAIR data, is that they make data findable, the first
-aspect of FAIR. This exersize will demonstrate how eNanoMapper ontology identifiers, if used by
-other resources, can be used to find information.
-
-Therefore, in this excersize we will use an ontology identifier (or, the `local part` of it),
-to find nanosafety data for a nanomaterial in the public eNanoMapper and NANoREG data platforms.
-
-...
-
-### eNanoMapper
-
-### NANoREG
-
 ---
 
-[prev](intro.md) | [toc](./README.md) | [next](scholia.md)
+[prev](intro.md) | [toc](./README.md) | [next](browsing2.md)
 
 Copyright 2019 (C) Egon Willighagen - CC-BY Int. 4.0
