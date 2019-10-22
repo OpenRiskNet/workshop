@@ -29,8 +29,8 @@ JRC representative industrial nanomaterials (see [[0](https://doi.org/10.1016/J.
 
 ### Questions
 
-1. What is the ontology term IRI for JRCNM01000a? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">This is my DIV element.</span>
-2. What is the ontology super class of this term? And the IRI of that?
+1. What is the ontology term IRI for JRCNM01000a? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">http://purl.enanomapper.org/onto/ENM_9000074</span>
+2. What is the ontology super class of this term? And the IRI of that?<button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">titanium oxide nanoparticle, http://purl.bioontology.org/ontology/npo#NPO_1486</span>
 
 ## Excersize 2: Browsing nanosafety data with the eNanoMapper data platform
 
