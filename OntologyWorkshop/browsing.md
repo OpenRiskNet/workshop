@@ -5,8 +5,8 @@
 <script>
   function toggleAnswer(id) {
   var answer = document.getElementById(id);
-  if (answer.style.display === "hidden" ||
-      answer.style.display === "none") {
+  if (answer.style.visibility === "hidden" ||
+      answer.style.visibility === "none") {
     answer.style.visibility = "visible";
   } else {
     answer.style.visibility = "hidden";
