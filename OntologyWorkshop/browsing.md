@@ -1,4 +1,4 @@
-# Browsing the eNanoMapper ontology
+# Excersize 1: Browsing the eNanoMapper ontology
 
 [prev](intro.md) | [toc](./README.md) | [next](browsing2.md)
 
@@ -14,7 +14,7 @@
 }
 </script>
 
-## Excersize 1: Browsing the ontology with BioPortal
+## Browsing the ontology with BioPortal
 
 The purpose of this excersize is to see how BioPortal visualizes the eNanoMapper ontology.
 A [detailed tutorial](https://enanomapper.github.io/tutorials/BrowseOntology/Tutorial%20browsing%20eNM%20ontology.html)
