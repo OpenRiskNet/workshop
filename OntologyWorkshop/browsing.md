@@ -2,6 +2,17 @@
 
 [prev](intro.md) | [toc](./README.md) | [next](scholia.md)
 
+<script>
+  function toggleAnswer(id) {
+  var answer = document.getElementById(id);
+  if (answer.style.display === "none") {
+    answer.style.display = "block";
+  } else {
+    answer.style.display = "none";
+  }
+}
+</script>
+
 ## Excersize 1: Browsing the ontology with BioPortal
 
 The purpose of this excersize is to see how BioPortal visualizes the eNanoMapper ontology.
@@ -17,7 +28,7 @@ JRC representative industrial nanomaterials (see [[0](https://doi.org/10.1016/J.
 
 ### Questions
 
-1. What is the ontology term IRI for JRCNM01000a?
+1. What is the ontology term IRI for JRCNM01000a? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1">: This is my DIV element.</span>
 2. What is the ontology super class of this term? And the IRI of that?
 
 ## Excersize 2: Browsing nanosafety data with the eNanoMapper data platform
