@@ -6,6 +6,13 @@
 
 Starting from the description in the [previous section](extending.md) ...
 
+## Creating RDF for a nanomaterial
+
+
+
+## Uploading the RDF to the OpenRiskNet cloud
+
+
 
 ---
 
