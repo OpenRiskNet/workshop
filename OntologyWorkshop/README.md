@@ -7,11 +7,11 @@ Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 ---
 
 * [Introduction](intro.md)
-* [Excersize: Browsing the ontology](browsing.md)
-* [Excersize: looking up JRCNM01101a in Scholia](scholia.md)
+* [Excersize 1-2: Browsing (with) the eNanoMapper ontology](browsing.md)
+* [Excersize 3: looking up JRCNM01101a in Scholia](scholia.md)
 * [Extending the eNanoMapper Ontology](extending.md)
-* [Excersize: adding a nanomaterial](nanomaterial.md)
-* [Excersize: creating an eNanoMapper data set in RDF](rdf.md)
+* [Excersize 4: adding a nanomaterial](nanomaterial.md)
+* [Excersize 5: creating an eNanoMapper data set in RDF](rdf.md)
 
 ---
 
