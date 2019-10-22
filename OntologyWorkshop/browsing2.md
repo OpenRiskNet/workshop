@@ -36,8 +36,8 @@ This part is about the original eNanoMapper database instance, set up by the
 #### Questions
 
 1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">None</span>
-2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">This finds 32 nanomaterials.</span>
-3. And how many for `ENM_9000080`?<button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">One material, https://data.enanomapper.net/substance/ENM3-d4c0bc69-bdaf-372f-b8c4-73ea0c8f5a06, which came from a EU NSC Young Scientist conference constribution.</span>
+2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">This finds 32 nanomaterials.</span>
+3. And how many for `ENM_9000080`?<button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">One material, https://data.enanomapper.net/substance/ENM3-d4c0bc69-bdaf-372f-b8c4-73ea0c8f5a06, which came from a EU NSC Young Scientist conference constribution.</span>
 
 ### NANoREG
 
@@ -46,8 +46,8 @@ This part is about the original eNanoMapper database instance, set up by the
 
 #### Questions
 
-1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">Also none</span>
-2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">This finds 140 nanomaterials.</span>
+1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q4')">Answer</button><span id="q4" style="visibility: hidden">Also none</span>
+2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q5')">Answer</button><span id="q5" style="visibility: hidden">This finds 140 nanomaterials.</span>
 
 ---
 
