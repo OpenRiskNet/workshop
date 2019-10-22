@@ -16,3 +16,5 @@ Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 ---
 
 [toc](./README.md) | [next](intro.md)
+
+Copyright 2019 (C) Egon Willighagen - CC-BY Int. 4.0
