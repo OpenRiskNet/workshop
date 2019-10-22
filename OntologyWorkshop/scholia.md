@@ -2,6 +2,18 @@
 
 [prev](browsing2.md) | [toc](./README.md) | [next](extending.md)
 
+<script>
+  function toggleAnswer(id) {
+  var answer = document.getElementById(id);
+  if (answer.style.visibility === "hidden" ||
+      answer.style.visibility === "none") {
+    answer.style.visibility = "visible";
+  } else {
+    answer.style.visibility = "hidden";
+  }
+}
+</script>
+
 ---
 
 Before we jump to the excersize, first a few pointers.
@@ -11,12 +23,18 @@ project of Wikipedia [[0](https://www.biorxiv.org/content/10.1101/799684v1)].
 Scholia uses a web technologies to visualize the results queried
 from Wikidata with the SPARQL query language [[1](https://riojournal.com/article/35820/)].
 
-Like in....
+Like in the previous excersize, we start with an ontology code for `JRCNM01101a`: `ENM_9000086`.
 
 ## Searching in Scholia
 
-The first
+* Step 1: Visit https://tools.wmflabs.org/scholia/
+* Step 2: Search `ENM_9000086`
 
+### Questions
+
+1. The URL contains the Wikidata Q-identifier. What is it? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">Q47462008</span>
+2. How many articles does Scholia show for `JRCNM01101a`? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">At the time of writing: four.</span>
+3. Which four journals have these articles appeared in? <button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">Toxicology in Vitro, Scientific Reports, Regulatory Toxicology and Pharmacology, and PLoS ONE.</span>
 
 ---
 
