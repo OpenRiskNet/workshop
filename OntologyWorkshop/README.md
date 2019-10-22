@@ -13,6 +13,13 @@ Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 * [Excersize 4: adding a nanomaterial](nanomaterial.md)
 * [Excersize 5: creating an eNanoMapper data set in RDF](rdf.md)
 
+### Acknowledgments
+
+This workshop is developed with funding from the OpenRiskNet (project 
+
+, but also leverages from efforst from NanoCommons (project...)
+and Scholia (project...)
+
 ---
 
 [toc](./README.md) | [next](intro.md)
