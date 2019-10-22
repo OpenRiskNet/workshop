@@ -15,10 +15,11 @@ Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 
 ### Acknowledgments
 
-This workshop is developed with funding from the OpenRiskNet (project 
-
-, but also leverages from efforst from NanoCommons (project...)
-and Scholia (project...)
+This workshop is developed within OpenRiskNet with funding from European Commission within Horizon2020
+EINFRA-22-2016 Programme under grant agreement nº 731075, 
+but also leverages from efforts by NanoCommons with funding from European Union Horizon 2020 Programme (H2020)
+under grant agreement nº 731032,
+and Scholia which funding from the Alfred P. Sloan Foundation under grant
 
 ---
 
