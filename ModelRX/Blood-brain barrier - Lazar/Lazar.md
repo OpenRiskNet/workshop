@@ -9,6 +9,7 @@ Command line [cURL](https://curl.haxx.se/) ([examples](https://github.com/OpenRi
 ### Outline
 
 Lazar service comes with pre-trained models. For this use case the service provides the training dataset for the consensus model. This part of the workshop explains how to get to the dataset to use it for other services.
+https://lazar.prod.openrisknet.org
 
 ### Exercise (Postman [collection](https://raw.githubusercontent.com/OpenRiskNet/workshop/master/ModelRX/lazar_workflow_workshop.postman_collection.json))
 
