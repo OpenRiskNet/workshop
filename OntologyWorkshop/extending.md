@@ -1,4 +1,4 @@
-# Extending the ontology
+# Extending the eNanoMapper ontology
 
 [prev](scholia.md) | [toc](./README.md) | [next](nanomaterial.md)
 
@@ -6,7 +6,8 @@
 
 This section of this workshop will not focus on adding ontology terms from any of the supported
 upstream ontology on which the eNanoMapper ontology is built. If you are interested in that,
-please go to the [XXXX]() tutorial.
+please go to the [XXXX]() tutorial. In that situation, you basically only need to determine
+the IRI of the term to add and where in the eNanoMapper ontology it should be placed.
 
 ## Creating OWL for a metal nanomaterial
 
