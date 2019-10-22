@@ -1,6 +1,6 @@
 # Ontology Walkthrough and Workshop
 
-[toc](./README.md) | [next](browsing.md)
+[toc](./README.md) | [next](intro.md)
 
 Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 
@@ -12,3 +12,7 @@ Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 * [Extending the eNanoMapper Ontology](extending.md)
 * [Excersize: adding a nanomaterial](nanomaterial.md)
 * [Excersize: creating an eNanoMapper data set in RDF](rdf.md)
+
+---
+
+[toc](./README.md) | [next](intro.md)
