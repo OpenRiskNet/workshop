@@ -4,9 +4,7 @@
 
 ## Excersize 1: browsing the ontology with BioPortal
 
-## Excersize 2: browing literature with eNanoMapper ontology terms
-
-## Excersize 3: browsing nanosafety data with the eNanoMapper data platform
+## Excersize 2: browsing nanosafety data with the eNanoMapper data platform
 
 ---
 
