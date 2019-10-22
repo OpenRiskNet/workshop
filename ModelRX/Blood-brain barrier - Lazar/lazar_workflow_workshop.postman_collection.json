@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "ecad171d-b75c-4e32-bb84-183db3a2e381",
+		"name": "ModelRX workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET and inspect endpoints list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/endpoint",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"endpoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and inspect endpoint of interest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/endpoint/Blood Brain Barrier Penetration",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"endpoint",
+						"Blood Brain Barrier Penetration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and inspect model",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/model/5ae2dd885f1c2d01323270ee",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"model",
+						"5ae2dd885f1c2d01323270ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and inspect model validation statistics all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/validation/repeatedcrossvalidation/5ae2dd885f1c2d01323270ed",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"validation",
+						"repeatedcrossvalidation",
+						"5ae2dd885f1c2d01323270ed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and inspect model validation statistics single",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/validation/crossvalidation/5ae2dd6a5f1c2d0132326ffa",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"validation",
+						"crossvalidation",
+						"5ae2dd6a5f1c2d0132326ffa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a compound for prediction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "identifier",
+							"value": "O=C1NC(=O)NC=C1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/model/5ae2dd885f1c2d01323270ee",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"model",
+						"5ae2dd885f1c2d01323270ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and inspect dataset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/dataset/5ae2dd675f1c2d0132326e63",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"dataset",
+						"5ae2dd675f1c2d0132326e63"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET and store dataset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/csv",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://lazar.prod.openrisknet.org/dataset/5ae2dd675f1c2d0132326e63",
+					"protocol": "https",
+					"host": [
+						"lazar",
+						"prod",
+						"openrisknet",
+						"org"
+					],
+					"path": [
+						"dataset",
+						"5ae2dd675f1c2d0132326e63"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
