@@ -2,6 +2,18 @@
 
 [prev](scholia.md) | [toc](./README.md) | [next](nanomaterial.md)
 
+<script>
+  function toggleAnswer(id) {
+  var answer = document.getElementById(id);
+  if (answer.style.visibility === "hidden" ||
+      answer.style.visibility === "none") {
+    answer.style.visibility = "visible";
+  } else {
+    answer.style.visibility = "hidden";
+  }
+}
+</script>
+
 ---
 
 This section of this workshop will not focus on adding ontology terms from any of the supported
@@ -89,6 +101,27 @@ And the combination of the two is encoded in OWL with the `owl:intersectionOf`:
       </owl:intersectionOf>
 ```
 
+Then, we want to be our new OWL class to be a nanoparticle, so the interaction should
+include that it is a nanoparticle. This is done with this line:
+
+```xml
+        <rdf:Description rdf:about="http://purl.bioontology.org/ontology/npo#NPO_707"/>
+```
+
+But because not every nanoparticle is a titanium nanoparticle, we should also add a restriction
+that the material should include titanium. This is done with the last few lines from our
+original OWL class snippet:
+
+```xml
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="http://purl.bioontology.org/ontology/npo#has_component_part"/>
+          <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33341"/>
+        </owl:Restriction>
+```
+
+### Questions
+
+1. How would you use an OWL Axiom to define a nanomaterial descriptor? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">You can define an `owl:equivalentClass` that the thing is a descriptor, but with the restriction that it is only computed for things that are nanomaterials, rather than all chemicals.</span>
 
 ---
 
