@@ -23,7 +23,7 @@ has been developed before.
 Your task is to find the ontology term for JRCNM01000a, one of the
 JRC representative industrial nanomaterials (see [[0](https://doi.org/10.1016/J.YRTPH.2016.08.008)]).
 
-* Step 1: Visit http://bioportal.bioontology.org/ontologies/ENM/
+* Step 1: Visit [http://bioportal.bioontology.org/ontologies/ENM/](http://bioportal.bioontology.org/ontologies/ENM/)
 * Step 2: Open the Classes tab
 * Step 3: Search `JRCNM01000a`
 
