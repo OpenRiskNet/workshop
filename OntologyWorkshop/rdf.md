@@ -45,7 +45,7 @@ The first bit of information that a FAIR data set needs, is a bit of information
 * Step 3: Use the below template to describe your data set:
 
 ```turtle
-owner:DS1
+owner:DataSet1
         a                   void:Dataset ;
         dcterms:license     <https://creativecommons.org/publicdomain/zero/1.0/> ;
         dcterms:publisher   "Egon Willighagen"@en ;
@@ -58,7 +58,60 @@ owner:DS1
 
 ## Info about your nanomaterial
 
+The next bit of information is about the nanomaterial. Here, the template looks like this:
 
+```turtle
+owner:Substance1
+        a                obo:CHEBI_59999 ;
+        rdfs:label       "zinc oxide" ;
+        dcterms:source   owner:DataSet1 ;
+        dcterms:type     npo:NPO_1542 .
+```
+
+In this template, the `obo:CHEBI_59999` is used to indicate that this resource is a chemical substance.
+You can update the `rdfs:label` to match your material, and the `dcterms:source` says that this material
+is part of the data set you created before.
+
+Besides the label for the material, the second important thing to change here is the type of your
+material. This is where the earlier exercise come in. There you looked up an eNanoMapper ontology IRI
+or even minted a new IRI. This IRI is what you need for the `dcterms:type` line.
+
+* Step 5: Update the material template for the name of your material and the IRI of your material
+
+If you material has coatings, please refer to the longer tutorial for examples on how to do that.
+
+## Adding the size of your material
+
+In the RDF discussed here, the data model of the BioAssay Ontology is reused for physicochemical
+properties too. This model is very flexible and rich, but therefore also somewhat longer. We
+define an assay (`owner:particleSizeAssay`), a measurement group (`owner:Substance1_sizemg`),
+and finally the size (`owner:Substance1_size`):
+
+```turtle
+owner:Substance1
+        obo:BFO_0000056  owner:Substance1_sizemg .
+
+owner:particleSizeAssay
+        a                npo:NPO_1694 , bao:BAO_0000015 ;
+        dc:title         "Particle Size" ;
+        bao:BAO_0000209  owner:Substance1_sizemg .
+
+owner:Substance1_sizemg  a  obo:BAO_0000040 ;
+        obo:OBI_0000299  owner:Substance1_size .
+
+owner:Substance1_size  a    bao:BAO_0002128 ;
+        rdfs:label       "primary particle size" ;
+        sio:has-unit     "nm" ;
+        sio:has-value    "13.6" .
+```
+
+In this template, basiclly only the resource IRIs ((`owner:Substance1_sizemg`) and (`owner:Substance1_size`))
+change when you add more than one material.
+
+But if you only want to describe during this workshop one nanomaterial, then you only need to change the
+actual size value, on the last line of this bit of template.
+
+Step 6: Copy/paste this template code into your text editor, and update the size
 
 
 ## Uploading the RDF to the OpenRiskNet cloud
