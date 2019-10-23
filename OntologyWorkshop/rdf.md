@@ -145,7 +145,7 @@ When the file is done, you can then proceed to the following and upload your RDF
 
 If all goes well, you should get a "Ready" message that looks like this:
 
-http://ttl.summerofcode.be/
+![](ambit2.png)
 
 If you did not get a "Ready" message, then there is likely something wrong with your data file. Please discuss
 this with one of the Workshop assistents.
