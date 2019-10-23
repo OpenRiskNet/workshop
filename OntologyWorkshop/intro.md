@@ -40,9 +40,46 @@ as we will see later, when we talk about axioms.
 
 ## The eNanoMapper ontology
 
+The eNanoMapper ontology was started by [the eNanoMapper project](http://enanomapper.net/), funded by
+the EU FP7, see also [[0](https://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-015-0005-5)].
+The ontology aims at giving the European nanosafety community a common language allowing it
+exchange and analyse data. It is now maintained by the NanoCommons project and sees contributions
+from OpenRiskNet and a few EU NanoSafety Cluster projects.
+
 ### Used ontologies
 
-### Ontology integration
+The eNanoMapper ontology was not developed from scratch. That would not be feasible, is not practical,
+and would not aid our community. Ontology development is complex and takes time. During daily research,
+we do not commonly think about the meanings of words we use or use them casually, focusing on the
+research question and answer, rather than formalizing what we study.
+But for an ontology, this formal framework is important. 
+
+The eNanoMapper reuses many external ontologies. Here is a list:
+
+* [Adverse Outcome Pathways Ontology](https://github.com/DataSciBurgoon/aop-ontology) (AOP)
+* [BioAssay Ontology](http://bioassayontology.org/) (BAO)
+* [Basic Formal Ontology](http://basic-formal-ontology.org/) (BFO)
+* [Cell Culture Ontology](http://bioportal.bioontology.org/ontologies/CCONT?p=summary) (CCONT)
+* [Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/) (CHEBI)
+* [Chemical Information Ontology](https://github.com/semanticchemistry/semanticchemistry/) (CHEMINF)
+* [Chemical Methods Ontology](https://github.com/rsc-ontologies/rsc-cmo) (CHMO)
+* [Experimental Factor Ontology](https://www.ebi.ac.uk/efo/) (EFO)
+* [Environment Ontology](http://environmentontology.org/) (ENVO)
+* [FRBR-aligned Bibliographic Ontology](https://sparontologies.github.io/fabio/current/fabio.html) (FABIO)
+* [Gene Ontology](http://www.geneontology.org/) (GO)
+* [Human Physiology Simulation Ontology](https://www.scai.fraunhofer.de/en/business-research-areas/bioinformatics/downloads.html) (HUPSON)
+* [Information Artifact Ontology](https://github.com/information-artifact-ontology/IAO/) (IAO)
+* [National Cancer Institute Thesaurus](https://nciterms.nci.nih.gov/) (NCIT)
+* [NanoParticle Ontology](http://www.nano-ontology.org/) (NPO)
+* [Ontology of Adverse Events](http://www.oae-ontology.org/) (OAE)
+* [Ontology of Biological and Clinical Statistics](https://github.com/obcs/obcs) (OBCS)
+* [Ontology for Biomedical Investigations](http://obi-ontology.org/) (OBI)
+* [Phenotype And Trait Ontology](https://github.com/pato-ontology/pato) (PATO)
+* [Semanticscience Integrated Ontology](https://github.com/micheldumontier/semanticscience) (SIO)
+* [Unit Ontology](https://github.com/bio-ontology-research-group/unit-ontology) (UO)
+
+This means that when assay data is annotated with eNanoMapper concepts, these are inherited from the BioAssay Ontology.
+And when it describes nanoparticles/nanomaterials, the model for this is inherited from the NanoParticle Ontology.
 
 ---
 
