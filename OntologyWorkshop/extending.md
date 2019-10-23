@@ -6,7 +6,8 @@
 
 This section of this workshop will not focus on adding ontology terms from any of the supported
 upstream ontologies on which the eNanoMapper ontology is built. If you are interested in that,
-please go to the [XXXX]() tutorial. In that situation, you basically only need to determine
+please go to the [Adding ontology terms](https://github.com/enanomapper/tutorials/tree/master/Added%20ontology%20terms) 
+tutorial. In that situation, you basically only need to determine
 the IRI of the term to add and where in the eNanoMapper ontology it should be placed.
 
 ## OWL for a metal nanomaterial
@@ -60,6 +61,33 @@ readable names: a code, a label, and a synonym. These RDF/XML lines are added:
   <synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ti nanoparticle</synonym>
 ```
 
+To introduce some structure, a hierarchical `subclass` link is added:
+
+```xml
+  <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/npo#NPO_1384"/>
+```
+
+### OWL Axioms
+
+The next step is to add a more complex ontological relation to the ontology. After all, a titanium
+nanoparticle `is basically` just a compound with a titanium `part` and it a `nanoparticle`. To define
+this combination of terms, OWL Axioms can be used.
+
+Now, the `is basically` is encoded in OWL as an `owl:equivalentClass`:
+
+```xml
+  <owl:equivalentClass>
+    <owl:Class>
+    </owl:Class>
+  </owl:equivalentClass>
+```
+
+And the combination of the two is encoded in OWL with the `owl:intersectionOf`:
+
+```xml
+      <owl:intersectionOf rdf:parseType="Collection">
+      </owl:intersectionOf>
+```
 
 
 ---
