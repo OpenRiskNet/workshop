@@ -1,0 +1,44 @@
+@prefix bao:   <http://www.bioassayontology.org/bao#> .
+@prefix cito:  <http://purl.org/net/cito/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix npo:   <http://purl.bioontology.org/ontology/npo#> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
+@prefix owner: <https://openrisknet.github.io/workshops/demo/owner/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio:   <http://semanticscience.org/resource/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+owner:DataSet1
+        a                   void:Dataset ;
+        dcterms:license     <https://creativecommons.org/publicdomain/zero/1.0/> ;
+        dcterms:publisher   "Egon Willighagen"@en ;
+        dcterms:description "Nanomaterials I am excited about."@en ;
+        dcterms:title       "Exciting nanomaterials"@en .
+
+owner:Substance1
+        a                obo:CHEBI_59999 ;
+        rdfs:label       "zinc oxide" ;
+        dcterms:source   owner:DataSet1 ;
+        dcterms:type     npo:NPO_1542 .
+
+owner:Substance1
+        obo:BFO_0000056  owner:Substance1_sizemg .
+
+owner:particleSizeAssay
+        a                npo:NPO_1694 , bao:BAO_0000015 ;
+        dc:title         "Particle Size" ;
+        bao:BAO_0000209  owner:Substance1_sizemg .
+
+owner:Substance1_sizemg  a  obo:BAO_0000040 ;
+        obo:OBI_0000299  owner:Substance1_size .
+
+owner:Substance1_size  a    bao:BAO_0002128 ;
+        rdfs:label       "primary particle size" ;
+        sio:has-unit     "nm" ;
+        sio:has-value    "13.6" .
+
+owner:Substance1_size cito:usesDataFrom <https://doi.org/10.1021/es900754q> .
