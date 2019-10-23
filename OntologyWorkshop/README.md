@@ -21,7 +21,7 @@ EINFRA-22-2016 Programme under grant agreement nº 731075,
 but also leverages efforts by [NanoCommons](https://www.nanocommons.eu/) with funding from European Union Horizon 2020 Programme (H2020)
 under grant agreement nº [731032](https://cordis.europa.eu/project/rcn/212586/en),
 and [Scholia](https://tools.wmflabs.org/scholia/) with funding from the Alfred P. Sloan Foundation under
-grant agreement G-2019-11458.
+[grant agreement G-2019-11458](https://doi.org/10.3897/rio.5.e35820).
 
 ---
 
