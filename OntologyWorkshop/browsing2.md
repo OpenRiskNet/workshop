@@ -30,7 +30,7 @@ So, we start with the ontology term code for the nanomaterial we looked up in Ex
 This part is about the original eNanoMapper database instance, set up by the
 [eNanoMapper](http://enanomapper.net/) project.
 
-* Step 1: Visit https://data.enanomapper.net/
+* Step 1: Visit [https://data.enanomapper.net/](https://data.enanomapper.net/)
 * Step 2: Search `ENM_9000074`
 
 #### Questions
