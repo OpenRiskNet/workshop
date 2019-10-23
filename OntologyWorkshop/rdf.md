@@ -20,11 +20,11 @@ text editor, like Notepad. This write up is a shorter version of [this longer tu
 After that, and because the document will be a valid RDF document, we need to specify a few shortcuts, which
 are called `namespaces` in RDF documents.
 
-* Step 2: Add the following namespace definitions to your document:
+* Step 2: Add the following namespace definitions to your document (or copy/paste [this full template](template.ttl)):
 
 ```turle
 @prefix bao:   <http://www.bioassayontology.org/bao#> .
-@prefix cito:  <http://purl.org/net/cito/>
+@prefix cito:  <http://purl.org/net/cito/> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
@@ -113,8 +113,44 @@ actual size value, on the last line of this bit of template.
 
 Step 6: Copy/paste this template code into your text editor, and update the size
 
+## Linking the particle to your article
+
+The final step in creating the RDF is to link your particle description to the article where you studied
+your particle. This is the template, and note that the article is linked to the physicochemical data,
+rather than the particle:
+
+```turtle
+owner:Substance1_size cito:usesDataFrom <https://doi.org/10.1021/es900754q> .
+```
+
+Step 7: Copy/paste this template and update the DOI in the IRI.
 
 ## Uploading the RDF to the OpenRiskNet cloud
+
+When done, explain your solution with your neighbor (peer review) and see if they agree with your formal description.
+You can also use [this validation service](http://ttl.summerofcode.be/) to check the content of your file
+for syntax errors. The feedback from this
+service is easier to understand, than the below OpenRiskNet service will return.
+
+When the file is done, you can then proceed to the following and upload your RDF into the OpenRiskNet platform:
+
+* Step 8: Visit the OpenRiskNet eNanoMapper instance at http://nanomaterialdb-test.prod.openrisknet.org/ambit/
+* Step 9: At the top, hover over `Data upload` and click `Spreadsheet upload`. You should get a page that looks like this:
+
+![](ambit.png)
+
+* Step 10: Ignore the mention of spreadsheets (it will load valid Turtle fine) and ignore *all* parameters on this page.
+* Step 11: Use the top `Choose file` button to select the file you created with your text editor
+* Step 12: Click Submit at the bottom
+
+If all goes well, you should get a "Ready" message that looks like this:
+
+http://ttl.summerofcode.be/
+
+If you did not get a "Ready" message, then there is likely something wrong with your data file. Please discuss
+this with one of the Workshop assistents.
+
+* Step 13: Visit http://nanomaterialdb-test.prod.openrisknet.org/ambit/substanceowner to confirm you see your data set
 
 ---
 
