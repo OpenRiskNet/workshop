@@ -4,7 +4,7 @@
 
 Material for the **Ontology Walkthrough and Workshop**, 23 October 2019.
 
-Go to https://openrisknet.github.io/workshop/OntologyWorkshop/
+Go to [https://openrisknet.github.io/workshop/OntologyWorkshop/](https://openrisknet.github.io/workshop/OntologyWorkshop/)
 
 ---
 
