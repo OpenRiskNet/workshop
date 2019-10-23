@@ -2,7 +2,7 @@
 
 [toc](./README.md) | [next](browsing.md)
 
-This workshop will give a short walkthrough of the eNanoMapper ontology, to remind you what the ontologies
+This workshop will give a short walkthrough of the eNanoMapper ontology, to remind you what the ontology
 was about. Generally, it assumes you already have seen or read about the ontology, and maybe even read some
 of the past tutorials:
 
@@ -17,7 +17,7 @@ for the main aspects of this workshop: hands-on work on reusing the ontology.
 
 The answer to the question what an ontology is, is a bit more abstract. We will focus, instead, on why
 we use ontologies. The core reason is us to communicate in a precise way what we are talking about,
-including being precise in uncertainty. For example, we can use ontologies to precise represent these
+including being precise in uncertainty. For example, we can use ontologies to precisely represent these
 concepts:
 
 * a material entity
