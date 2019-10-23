@@ -5,14 +5,14 @@
 ---
 
 This section of this workshop will not focus on adding ontology terms from any of the supported
-upstream ontology on which the eNanoMapper ontology is built. If you are interested in that,
+upstream ontologies on which the eNanoMapper ontology is built. If you are interested in that,
 please go to the [XXXX]() tutorial. In that situation, you basically only need to determine
 the IRI of the term to add and where in the eNanoMapper ontology it should be placed.
 
 ## OWL for a metal nanomaterial
 
-In this example, you will reproduce a bit OWL file that adds a nanomaterial to the ontology that
-was not yet. We will first see the full example and then discuss the components bit by bit.
+In this example, you will reproduce a small OWL file that adds a nanomaterial to the ontology that
+was not included yet. We will first see the full example and then discuss the components bit by bit.
 
 So, let's make the jump in and briefly look at the full example. It uses OWL Axioms to provide
 additional meaning to the ontology, useful for reasoning later (why?). Here it is:
