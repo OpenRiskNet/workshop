@@ -41,7 +41,7 @@ This part is about the original eNanoMapper database instance, set up by the
 
 ### NANoREG
 
-* Step 1: Visit https://search.data.enanomapper.net/nanoreg_about.html
+* Step 1: Visit [https://search.data.enanomapper.net/nanoreg_about.html](https://search.data.enanomapper.net/nanoreg_about.html)
 * Step 2: Search `ENM_9000074`
 
 #### Questions
