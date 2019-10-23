@@ -9,7 +9,7 @@ upstream ontology on which the eNanoMapper ontology is built. If you are interes
 please go to the [XXXX]() tutorial. In that situation, you basically only need to determine
 the IRI of the term to add and where in the eNanoMapper ontology it should be placed.
 
-## Creating OWL for a metal nanomaterial
+## OWL for a metal nanomaterial
 
 In this example, you will reproduce a bit OWL file that adds a nanomaterial to the ontology that
 was not yet. We will first see the full example and then discuss the components bit by bit.
@@ -36,6 +36,31 @@ additional meaning to the ontology, useful for reasoning later (why?). Here it i
   <synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ti nanoparticle</synonym>
 </owl:Class>
 ```
+
+This snippet of OWL is written in the eXtensible Markup Language (XML) serialization.
+
+We now will discuss this snippet in more detail. First, the snippet defines a new OWL class with
+these instructions:
+
+```xml
+<owl:Class rdf:about="http://purl.enanomapper.org/onto/ENM_9000245">
+</owl:Class>
+```
+
+The `<owl:Class>` part indicates information about a (new) class is given, while the `rdf:about`
+part describes the IRI of the class. Because this IRI has not been used elsewhere, it defines a new
+class.
+
+Because ontologies are not meant for only machines but also for humans, we will add a few human
+readable names: a code, a label, and a synonym. These RDF/XML lines are added:
+
+```xml
+  <npo-ext:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">titanium nanoparticle</npo-ext:code>
+  <rdfs:label xml:lang="en">titanium nanoparticle</rdfs:label>
+  <synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ti nanoparticle</synonym>
+```
+
+
 
 ---
 
