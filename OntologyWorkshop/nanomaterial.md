@@ -1,4 +1,4 @@
-# Excersize 4: adding a nanomaterial
+# Exercise 4: adding a nanomaterial
 
 [prev](extending.md) | [toc](./README.md) | [next](rdf.md)
 
