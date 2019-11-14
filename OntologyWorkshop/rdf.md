@@ -134,7 +134,7 @@ service is easier to understand, than the below OpenRiskNet service will return.
 
 When the file is done, you can then proceed to the following and upload your RDF into the OpenRiskNet platform:
 
-* Step 8: Visit the OpenRiskNet eNanoMapper instance at http://nanomaterialdb-test.prod.openrisknet.org/ambit/
+* Step 8: Visit the OpenRiskNet eNanoMapper instance at [http://nanomaterialdb-test.prod.openrisknet.org/ambit/](http://nanomaterialdb-test.prod.openrisknet.org/ambit/)
 * Step 9: At the top, hover over `Data upload` and click `Spreadsheet upload`. You should get a page that looks like this:
 
 ![](ambit.png)
@@ -150,7 +150,7 @@ If all goes well, you should get a "Ready" message that looks like this:
 If you did not get a "Ready" message, then there is likely something wrong with your data file. Please discuss
 this with one of the Workshop assistents.
 
-* Step 13: Visit http://nanomaterialdb-test.prod.openrisknet.org/ambit/substanceowner to confirm you see your data set
+* Step 13: Visit [http://nanomaterialdb-test.prod.openrisknet.org/ambit/substanceowner](http://nanomaterialdb-test.prod.openrisknet.org/ambit/substanceowner) to confirm you see your data set
 
 ---
 
