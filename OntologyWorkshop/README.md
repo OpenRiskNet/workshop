@@ -25,7 +25,7 @@ under grant agreement nº [731032](https://cordis.europa.eu/project/rcn/212586/e
 [NanoSolveIT](https://www.nanosolveit.eu/) with funding from the European Union Horizon 2020 Programme (H2020)
 under grant agreement nº 814572,
 and [Scholia](https://tools.wmflabs.org/scholia/) with funding from the Alfred P. Sloan Foundation under
-grant agreement G-2019-11458.
+[grant agreement G-2019-11458](https://doi.org/10.3897/rio.5.e35820).
 
 ---
 
