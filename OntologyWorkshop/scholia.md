@@ -33,8 +33,8 @@ Like in the previous exercise, we start with an ontology code for `JRCNM01101a`:
 ### Questions
 
 1. The URL contains the Wikidata Q-identifier. What is it? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">Q47462008</span>
-2. How many articles does Scholia show for `JRCNM01101a`? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">At the time of writing: four.</span>
-3. Which four journals have these articles appeared in? <button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">Toxicology in Vitro, Scientific Reports, Regulatory Toxicology and Pharmacology, and PLoS ONE.</span>
+2. How many articles does Scholia show for `JRCNM01101a`? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">At the time of writing: six.</span>
+3. Which four journals have these articles appeared in? <button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">Nanomaterials, Particle and Fibre Toxicology, Toxicology in Vitro, Scientific Reports, Regulatory Toxicology and Pharmacology, and PLoS ONE.</span>
 
 ---
 
