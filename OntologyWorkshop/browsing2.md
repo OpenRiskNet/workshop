@@ -35,19 +35,19 @@ This part is about the original eNanoMapper database instance, set up by the
 
 #### Questions
 
-1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">None</span>
-2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">This finds 32 nanomaterials.</span>
-3. And how many for `ENM_9000080`?<button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">One material, https://data.enanomapper.net/substance/ENM3-d4c0bc69-bdaf-372f-b8c4-73ea0c8f5a06, which came from a EU NSC Young Scientist conference contribution.</span>
+1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q1')">Answer</button><span id="q1" style="visibility: hidden">One</span>
+2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q2')">Answer</button><span id="q2" style="visibility: hidden">This finds 80 nanomaterials.</span>
+3. And how many for `ENM_9000080`?<button onclick="toggleAnswer('q3')">Answer</button><span id="q3" style="visibility: hidden">Two materials, https://data.enanomapper.net/substance/ENM3-d4c0bc69-bdaf-372f-b8c4-73ea0c8f5a06, which came from a EU NSC Young Scientist conference contribution. And https://search.data.enanomapper.net/projects/enanomapper/study/?substanceUri=https%3A%2F%2Fdata.enanomapper.net%2Fsubstance%2FNWKI-78f103d7-ca6c-3515-acdf-c504d48c96f9, which came from NanoWiki.</span>
 
 ### NANoREG
 
-* Step 1: Visit [https://search.data.enanomapper.net/nanoreg_about.html](https://search.data.enanomapper.net/nanoreg_about.html)
+* Step 1: Visit [https://search.data.enanomapper.net/projects/nanoreg/](https://search.data.enanomapper.net/projects/nanoreg/)
 * Step 2: Search `ENM_9000074`
 
 #### Questions
 
-1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q4')">Answer</button><span id="q4" style="visibility: hidden">Also none</span>
-2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q5')">Answer</button><span id="q5" style="visibility: hidden">This finds 140 nanomaterials.</span>
+1. How many entries are found when searching with this ontology term? <button onclick="toggleAnswer('q4')">Answer</button><span id="q4" style="visibility: hidden">Also one</span>
+2. And what if we search for the more general `NPO_1486` for titanium oxide nanoparticle? <button onclick="toggleAnswer('q5')">Answer</button><span id="q5" style="visibility: hidden">This finds 7 nanomaterials.</span>
 
 ---
 
