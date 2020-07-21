@@ -27,7 +27,7 @@ Like in the previous exercise, we start with an ontology code for `JRCNM01101a`:
 
 ## Searching in Scholia
 
-* Step 1: Visit [https://tools.wmflabs.org/scholia/](https://tools.wmflabs.org/scholia/)
+* Step 1: Visit [https://scholia.toolforge.org/](https://scholia.toolforge.org/)
 * Step 2: Search `ENM_9000086`
 
 ### Questions
